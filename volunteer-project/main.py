@@ -32,7 +32,7 @@ class MainHandler(webapp2.RequestHandler):
 
 		data = {}
 		data["event_results"]= event_results
-		query = self.request.get("search_term", "default")
+		
 
 		template = env.get_template("home.html")
 
@@ -56,6 +56,7 @@ class LoginHandler(webapp2.RequestHandler):
 	
 class SearchHandler(webapp2.RequestHandler):
 	def get(self):
+		query = self.request.get("search_term", "default")
 		template = env.get_template("search.html")
 
 class CreateEvent(webapp2.RequestHandler):
