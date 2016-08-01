@@ -20,15 +20,15 @@ from google.appengine.api import users
 
 env = jinja2.Environment(
 	loader=jinja2.FileSystemLoader("templates"))
+global user = users.get_current_user
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
 
         #initiates login
-        user = users.get_current_user()
+        global user
     	if user:
-        	greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
-            	(user.nickname(), users.create_logout_url('/')))
+        	
         	self.redirect('/home')
 
     	else:
@@ -39,6 +39,9 @@ class MainHandler(webapp2.RequestHandler):
 
 class HomeHandler(webapp2.RequestHandler):
 	def get(self):
+		global user
+		greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
+            	(user.nickname(), users.create_logout_url('/')))
 		template = env.get_template("home.html")
         self.response.write(template.render())
 
