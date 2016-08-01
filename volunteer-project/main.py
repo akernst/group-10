@@ -44,15 +44,19 @@ class HomeHandler(webapp2.RequestHandler):
 		template = env.get_template("home.html")
 		
 		event_query = Event.query()
-    event_results = event_query.fetch()
+  		event_results = event_query.fetch()
 
 		query = self.request.get("search_term", "default")
 		
 
 		self.response.write(template.render())
 	
-
+class SearchHandler(webapp2.RequestHnadler):
+	def get(self):
+		template = env.get_template("search.html")
+		
 app = webapp2.WSGIApplication([
 	('/', MainHandler),
-	('/home', HomeHandler)
+	('/home', HomeHandler),
+	('/search',SearchHandler)
 ], debug=True)
