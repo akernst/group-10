@@ -52,7 +52,7 @@ class HomeHandler(webapp2.RequestHandler):
 
 		self.response.write(template.render())
 	
-class SearchHandler(webapp2.RequestHnadler):
+class SearchHandler(webapp2.RequestHandler):
 	def get(self):
 		template = env.get_template("search.html")
 
