@@ -75,3 +75,8 @@ li a:link {
 li a:hover {
         color:lightblue
 }
+
+#descriptionBox {
+        height: 300px;
+        width: 500px;
+}

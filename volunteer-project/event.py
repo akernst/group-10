@@ -2,7 +2,7 @@ from google.appengine.ext import ndb
 
 
 class Event(ndb.Model):
-	name = ndb.StringProperty(required = True)
+	eventname = ndb.StringProperty(required = True)
 	datetime = ndb.DateTimeProperty(auto_now = True)
 	eventinfo = ndb.StringProperty(required = True)
 	location = ndb.GeoPtProperty(required = True)
