@@ -15,7 +15,7 @@
     color: purple;
 }
 
-#event{
+.event{
     padding: 10px 10px;
     background-color: yellow; /* Green */
     border: none;
@@ -33,13 +33,13 @@
 }
 
 
-#event1 {
+.event1 {
     background-color: white;
     color: black;
     border: 2px solid #4CAF50;
 }
 
-#event1:hover {
+.event1:hover {
     background-color: #4CAF50;
     color: white;
 }
