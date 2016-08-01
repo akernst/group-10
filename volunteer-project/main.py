@@ -20,24 +20,28 @@ from google.appengine.api import images
 from google.appengine.api import users
 from event import Event 
 from user import User 
+import logging
 
 env = jinja2.Environment(
 	loader=jinja2.FileSystemLoader("templates"))
 
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
-		template = env.get_template("home.html")
+
 		
 		event_query = Event.query()
 		event_results = event_query.fetch()
-		query = self.request.get("search_term", "default")
-		
+		logging.info(event_results)
 
+		query = self.request.get("search_term", "default")
+
+		template = env.get_template("home.html")
 		self.response.write(template.render())
+
+
 
 class LoginHandler(webapp2.RequestHandler):
 	def get(self):
-
 		'''This section initiates the log in function'''
 		user = users.get_current_user()
 		if user:
