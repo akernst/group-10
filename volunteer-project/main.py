@@ -26,6 +26,16 @@ env = jinja2.Environment(
 
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
+		template = env.get_template("home.html")
+		
+		event_query = Event.query()
+		event_results = event_query.fetch()
+		query = self.request.get("search_term", "default")
+		
+
+		self.response.write(template.render())
+class LoginHandler(webapp2.RequestHandler):
+	def get(self):
 
 		'''This section initiates the log in function'''
 		user = users.get_current_user()
@@ -37,20 +47,6 @@ class MainHandler(webapp2.RequestHandler):
 			users.create_login_url('/'))
 
 		self.response.out.write('<html><body>%s</body></html>' % greeting)
-   		
-	
-
-class HomeHandler(webapp2.RequestHandler):
-	def get(self):
-		template = env.get_template("home.html")
-		
-		event_query = Event.query()
-  		event_results = event_query.fetch()
-
-		query = self.request.get("search_term", "default")
-		
-
-		self.response.write(template.render())
 	
 class SearchHandler(webapp2.RequestHandler):
 	def get(self):
@@ -63,7 +59,7 @@ class allEventHandler(webapp2.RequestHandler):
 		
 app = webapp2.WSGIApplication([
 	('/', MainHandler),
-	('/home', HomeHandler),
+	('/login', LoginHandler),
 	('/search',SearchHandler),
 	('/allEvents', allEventHandler)
 ], debug=True)
