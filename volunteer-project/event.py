@@ -8,5 +8,5 @@ class Event(ndb.Model):
 	eventinfo = ndb.StringProperty(required = False)
 	location = ndb.IntegerProperty(required = False)
 	agereq = ndb.IntegerProperty(required = True)
-	tags = ndb.StringProperty(required=False)
+	tags = ndb.StringProperty(required= False)
 	profile = ndb.BlobProperty(required = False)

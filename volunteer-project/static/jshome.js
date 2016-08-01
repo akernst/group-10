@@ -2,8 +2,6 @@ function redirectToLogin() {
     window.location.replace("/login");
 }
 
-
-
 function redirectToEvent(){
     window.location.replace("/createEvent")
 }
