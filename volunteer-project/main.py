@@ -71,7 +71,7 @@ class CreateEvent(webapp2.RequestHandler):
 		eventdate = self.request.get('eventdate')
 		agereq = int(self.request.get('agereq'))
 		tags = self.request.get('tags')
-		profile = self.request.get('img')
+		profile = self.request.get('profile')
 
 		event = Event(eventname = eventName, eventdate = eventdate, agereq = agereq, tags = tags, profile = profile)
 		event.put()

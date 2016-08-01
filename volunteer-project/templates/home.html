@@ -23,7 +23,7 @@
         {% for event in event_results %}
         <div>
         Random text
-    			<div class="profile"> {{ event.profile }}</div>
+    			<div class="profile"> {{ event.profile.decode('base64') }}</div>
     			<p class="title"> {{ event.eventname }}</p>
     			<p class="eventinfo"> {{ event.eventinfo }}</p>  			
         </div>
