@@ -27,18 +27,15 @@ env = jinja2.Environment(
 
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
-		data = {}
-
 		event_query = Event.query()
 		event_results = event_query.fetch()
-		logging.info(event_results)
 
+		data = {}
 		data["event_results"]= event_results
 		query = self.request.get("search_term", "default")
 
 		template = env.get_template("home.html")
-		logging.info(template)
-		logging.info(template.render())
+
 		self.response.write(template.render(data))
 
 
@@ -71,7 +68,7 @@ class CreateEvent(webapp2.RequestHandler):
 		eventdate = self.request.get('eventdate')
 		agereq = int(self.request.get('agereq'))
 		tags = self.request.get('tags')
-		profile = self.request.get('img')
+		profile = self.request.get('profile')
 
 		event = Event(eventname = eventName, eventdate = eventdate, agereq = agereq, tags = tags, profile = profile)
 		event.put()
