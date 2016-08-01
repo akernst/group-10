@@ -56,9 +56,9 @@ class SearchHandler(webapp2.RequestHnadler):
 	def get(self):
 		template = env.get_template("search.html")
 
-class allEventsHandler(webapp2.RequestHandler):
+class allEventHandler(webapp2.RequestHandler):
 	def post(self):
-		
+		event = Event
 
 		
 app = webapp2.WSGIApplication([
