@@ -51,8 +51,12 @@ class HomeHandler(webapp2.RequestHandler):
 
 		self.response.write(template.render())
 	
-
+class SearchHandler(webapp2.RequestHnadler):
+	def get(self):
+		template = env.get_template("search.html")
+		
 app = webapp2.WSGIApplication([
 	('/', MainHandler),
-	('/home', HomeHandler)
+	('/home', HomeHandler),
+	('/search',SearchHandler)
 ], debug=True)
