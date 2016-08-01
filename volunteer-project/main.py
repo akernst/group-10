@@ -16,6 +16,7 @@
 #
 import webapp2
 import jinja2
+from google.appengine.api import images
 from google.appengine.api import users
 from event import Event 
 from user import User 
@@ -54,9 +55,14 @@ class HomeHandler(webapp2.RequestHandler):
 class SearchHandler(webapp2.RequestHnadler):
 	def get(self):
 		template = env.get_template("search.html")
+
+class allEventsHandler(webapp2.RequestHandler):
+	def get(self):
+
 		
 app = webapp2.WSGIApplication([
 	('/', MainHandler),
 	('/home', HomeHandler),
-	('/search',SearchHandler)
+	('/search',SearchHandler),
+	('/allEvents', allEventHandler)
 ], debug=True)
