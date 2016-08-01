@@ -27,17 +27,19 @@ env = jinja2.Environment(
 
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
+		data = {}
 
 		event_query = Event.query()
 		event_results = event_query.fetch()
 		logging.info(event_results)
 
+		data["event_results"]= event_results
 		query = self.request.get("search_term", "default")
 
 		template = env.get_template("home.html")
 		logging.info(template)
 		logging.info(template.render())
-		self.response.write(template.render())
+		self.response.write(template.render(data))
 
 
 

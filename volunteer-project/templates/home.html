@@ -6,19 +6,19 @@
 
         <link rel = "stylesheet" href = "/static/css/csshome.css">
         
-        <!-- Links to Navigation Bar -->
-        {% include 'navBar.html' %}
-        </br>
-        </br>
-        </br>
-        </br>
-        </br>
-        <button type="submit">Click here to create a new Event</button>
 
     </head>
 
 
     <body>
+        <!-- Links to Navigation Bar -->
+        {% include 'navBar.html' %}
+        <br>
+        <br>
+        <br>
+        <br>
+        <button id = "event" type="submit">Click here to create a new Event</button>
+        
         <!--This will be the newsfeed-->
         {% for event in event_results %}
         <div>
