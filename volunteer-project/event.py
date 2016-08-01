@@ -8,3 +8,4 @@ class Event(ndb.Model):
 	location = ndb.StringProperty(required = True)
 	agereq = ndb.IntegerProperty(required = False)
 	tags = ndb.StringProperty(required = True)
+	dateadded = ndb.DateProperty(required = True)
