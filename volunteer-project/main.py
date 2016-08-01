@@ -24,30 +24,30 @@ env = jinja2.Environment(
 	loader=jinja2.FileSystemLoader("templates"))
 
 class MainHandler(webapp2.RequestHandler):
-    def get(self):
+	def get(self):
 
-        #initiates login
-        user = users.get_current_user()
-    	if user:
-        	greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
-            	(user.nickname(), users.create_logout_url('/')))
-        	self.redirect('/home')
+		#initiates login
+		user = users.get_current_user()
+		if user:
+			greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
+				(user.nickname(), users.create_logout_url('/')))
+			self.redirect('/home')
 
-    	else:
-        	greeting = ('<a href="%s">Sign in or register</a>.' %
-            	users.create_login_url('/'))
+		else:
+			greeting = ('<a href="%s">Sign in or register</a>.' %
+				users.create_login_url('/'))
 
-    	self.response.out.write('<html><body>%s</body></html>' % greeting)
+		self.response.out.write('<html><body>%s</body></html>' % greeting)
 
 class HomeHandler(webapp2.RequestHandler):
 	def get(self):
 		template = env.get_template("home.html")
-        self.response.write(template.render())
+		self.response.write(template.render())
 
 
 
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler),
-    ('/home', HomeHandler)
+	('/', MainHandler),
+	('/home', HomeHandler)
 ], debug=True)
