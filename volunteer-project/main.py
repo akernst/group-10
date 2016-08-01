@@ -34,6 +34,7 @@ class MainHandler(webapp2.RequestHandler):
 		
 
 		self.response.write(template.render())
+
 class LoginHandler(webapp2.RequestHandler):
 	def get(self):
 
@@ -52,14 +53,25 @@ class SearchHandler(webapp2.RequestHandler):
 	def get(self):
 		template = env.get_template("search.html")
 
-class allEventHandler(webapp2.RequestHandler):
+class CreateEvent(webapp2.RequestHandler):
 	def get(self):
-		self.response.write("hi")
+		template = env.get_template("createEvent.html")
+
+class allEventHandler(webapp2.RequestHandler):
+	def post(self):
+
+		profile = self.request.get('img')
+
+		profile = images.resiza(profile, 32, 32)
+
+		event.profile = profile
+		event.put()
 
 		
 app = webapp2.WSGIApplication([
 	('/', MainHandler),
 	('/login', LoginHandler),
 	('/search',SearchHandler),
+	('/createEvent', CreateEvent),
 	('/allEvents', allEventHandler)
 ], debug=True)
