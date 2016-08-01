@@ -60,17 +60,24 @@ class SearchHandler(webapp2.RequestHandler):
 class CreateEvent(webapp2.RequestHandler):
 	def get(self):
 		template = env.get_template("createEvent.html")
+		self.response.out.write(template.render())
+	def post(self):
+		eventName = self.request.get('eventName')
+		eventinfo = self.request.get('description')
+		eventdate = self.request.get('eventdate')
+		agereq = int(self.request.get('agereq'))
+		tags = self.request.get('tags')
+		profile = self.request.get('img')
+
+		event = Event(eventname = eventName, eventdate = eventdate, agereq = agereq, tags = tags, profile = profile)
+		event.put()
+
+		self.response.out.write("Thank you for submitting your event")
+
 
 class allEventHandler(webapp2.RequestHandler):
 	def post(self):
-
-		profile = self.request.get('img')
-
-		profile = images.resiza(profile, 32, 32)
-
-		event.profile = profile
-		event.put()
-
+		self.response.out.write("hi")
 		
 app = webapp2.WSGIApplication([
 	('/', MainHandler),
