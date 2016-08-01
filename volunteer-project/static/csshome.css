@@ -14,6 +14,26 @@ thead tr th {
     /* text-align: left; */
 }
 
+#search {
+  /* position is static by default */
+  margin-left: 800px;
+}
+
+
+#login{
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    width: 100px;
+    bottom: 100px;
+    height: 30px;
+    border: 3px solid #00ffff;
+    text-align:center;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    color: purple;
+}
+
+
 table.scroll tbody {
     height: 100px;
     overflow-y: auto;
@@ -35,7 +55,7 @@ tbody td:last-child, thead th:last-child {
 
 /*Sections formatting defined*/
 
-h1 {
+#title {
         font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
         color: purple;
     }
