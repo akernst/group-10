@@ -41,6 +41,8 @@ class HomeHandler(webapp2.RequestHandler):
 	def get(self):
 		template = env.get_template("home.html")
 
+		query = self.request.get("search_term", "default")
+		
 		event_query = Event.query()
     event_results = event_query.fetch()
 
