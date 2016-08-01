@@ -30,4 +30,5 @@ tbody td, thead th {
 
 tbody td:last-child, thead th:last-child {
     border-right: none;
+    
 }
