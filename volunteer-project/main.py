@@ -25,6 +25,8 @@ env = jinja2.Environment(
 
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
+
+		'''This section initiates the log in function'''
 		user = users.get_current_user()
 		if user:
 			greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
@@ -41,7 +43,7 @@ class HomeHandler(webapp2.RequestHandler):
 	def get(self):
 		template = env.get_template("home.html")
 
-		  event_query = Event.query()
+		event_query = Event.query()
     	event_results = event_query.fetch()
 
 		self.response.write(template.render())
