@@ -1,25 +1,7 @@
-table.scroll {
-    /* width: 100%; */ /* Optional */
-    /* border-collapse: collapse; */
-    border-spacing: 0;
-    border: 2px solid black;
-}
-
-table.scroll tbody,
-table.scroll thead { display: block; }
-
-thead tr th { 
-    height: 30px;
-    line-height: 30px;
-    /* text-align: left; */
-}
-
 #search {
   /* position is static by default */
   margin-left: 800px;
 }
-
-
 #login{
     position: absolute;
     top: 0px;
@@ -33,24 +15,47 @@ thead tr th {
     color: purple;
 }
 
-
-table.scroll tbody {
-    height: 100px;
-    overflow-y: auto;
-    overflow-x: hidden;
+#event{
+    padding: 10px 10px;
+    background-color: yellow; /* Green */
+    border: none;
+    color: purple;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    color: purple;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
 
-tbody { border-top: 2px solid black; }
 
-tbody td, thead th {
-    /* width: 20%; */ /* Optional */
-    border-right: 1px solid black;
-    /* white-space: nowrap; */
+#event1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
 }
 
-tbody td:last-child, thead th:last-child {
-    border-right: none;
+#event1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
 
+h2
+/*create event title*/
+{
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    text-decoration: underline;
+    color: purple;
+}
+
+div{
+    background-color: #00ffff;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    color: purple;
 }
 
 /*Sections formatting defined*/
@@ -97,6 +102,6 @@ li a:hover {
 }
 
 #descriptionBox {
-        height: 300px;
-        width: 500px;
+        height: 100px;
+        width: 400px;
 }
