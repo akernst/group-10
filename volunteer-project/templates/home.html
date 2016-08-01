@@ -14,14 +14,7 @@
         </br>
         </br>
         <button type="submit">Click here to create a new Event</button>
-        {% for event in event_results %}
-        <div>
-        Random text
-    			<div class="profile"> {{ event.profile }}</div>
-    			<p class="title"> {{ event.eventname }}</p>
-    			<p class="eventinfo"> {{ event.eventinfo }}</p>  			
-        </div>
-        {% endfor %}
+
     </head>
 
 
@@ -37,7 +30,7 @@
         {% endfor %}
 
         <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script><!-- this is how you link jquery... google hosted libraries jquery has this -->
-    <script src = "jshome.js"></script>
+    		<script src = "/static/jshome.js"></script>
     </body>
 </html>
 
