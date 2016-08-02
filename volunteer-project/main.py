@@ -72,8 +72,13 @@ class CreateEvent(webapp2.RequestHandler):
 
 		self.response.out.write("Thank you for submitting your event")
 
+class AboutHandler(webapp2.RequestHandler):
+	def get(self):
+		template = env.get_template("about.html")
+		self.response.out.write(template.render())
 
-class allEventHandler(webapp2.RequestHandler):
+
+class allEventsHandler(webapp2.RequestHandler):
 	def post(self):
 		self.response.out.write("hi")
 		
@@ -82,5 +87,6 @@ app = webapp2.WSGIApplication([
 	('/login', LoginHandler),
 	('/search',SearchHandler),
 	('/createEvent', CreateEvent),
-	('/allEvents', allEventHandler)
+	('/about', AboutHandler),
+	('/allEvents', allEventsHandler)
 ], debug=True)

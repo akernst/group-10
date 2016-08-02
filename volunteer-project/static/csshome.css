@@ -2,7 +2,8 @@
   /* position is static by default */
   margin-left: 800px;
 }
-#login{
+
+#login {
     position: absolute;
     top: 0px;
     right: 20px;
@@ -63,6 +64,7 @@ div{
 #title {
         font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
         color: purple;
+        margin: 10px;
     }
 
 ul {

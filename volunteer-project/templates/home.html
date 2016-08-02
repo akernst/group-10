@@ -3,6 +3,8 @@
     <head>
         <title>Welcome to iVolunteer!</title>
         <link rel = "stylesheet" href = "/static/css/csshome.css">
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script><!-- this is how you link jquery... google hosted libraries jquery has this -->
+        <script src = "/static/jshome.js"></script>
     </head>
 
     <body>
@@ -12,8 +14,9 @@
         <br>
         <br>
         <br>
-        <button id = "event" type="submit">Click here to create a new Event</button>
         
+        <!--Create New Event-->
+        <button id = "event" type="submit">Click here to create a new Event</button>
         <!--This will be the newsfeed-->
         {% for event in event_results %}
         <div>
@@ -24,8 +27,7 @@
         </div>
         {% endfor %}
 
-        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script><!-- this is how you link jquery... google hosted libraries jquery has this -->
-    		<script src = "/static/jshome.js"></script>
+        
     </body>
 </html>
 
