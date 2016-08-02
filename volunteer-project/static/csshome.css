@@ -32,7 +32,9 @@ html {
     text-align: center;
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     color: purple;
-    background-color: #c2c2d6; /*light grey*/
+    background-color: #c2c2d6;
+    border-radius: 10px 10px 10px 10px;
+} /*light grey*/
 }
 
 /*create an event button*/
