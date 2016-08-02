@@ -28,6 +28,7 @@ env = jinja2.Environment(
 
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
+		# Displays events
 		event_query = Event.query()
 		event_results = event_query.fetch()
 
@@ -38,18 +39,18 @@ class MainHandler(webapp2.RequestHandler):
 
 		self.response.write(template.render(data))
 
+
+
 class LoginHandler(webapp2.RequestHandler):
 	def get(self):
 		'''This section initiates the log in function'''
 
-		users = {}
 		current_user = users.get_current_user()
 		if current_user:
 			name = current_user.nickname()
 			email = current_user.email()
 			greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
 			(name, users.create_logout_url('/')))
-			user.put()
 		else:
 			greeting = ('<a href="%s">Sign in or register</a>.' %
 			users.create_login_url('/'))
