@@ -22,6 +22,14 @@ html {
     font-size: 25px;
     background: rgba(194, 194, 214, .75);
 }
+
+#wholebox{
+    margin: 100px;
+    padding: 30px;
+    font-weight: bold;
+    font-size: 25px;
+    background: rgba(194, 194, 214, .75);
+}
 /*login button*/
 #login {
     position: absolute;
@@ -37,11 +45,19 @@ html {
     color: purple;
     background-color: #c2c2d6;
     border-radius: 10px 10px 10px 10px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+
 } /*light grey*/
+
+#login:hover {
+    background-color: grey;
+    color: white;
 }
 
+
 /*create an event button*/
-.event{
+.event {
     padding: 10px 10px;
     border: none;
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
