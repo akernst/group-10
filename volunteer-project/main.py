@@ -47,6 +47,7 @@ class LoginHandler(webapp2.RequestHandler):
 			(user.nickname(), users.create_logout_url('/')))
 			name = user.nickname()
 			email = user.email()
+			user.put()
 		else:
 			greeting = ('<a href="%s">Sign in or register</a>.' %
 			users.create_login_url('/'))
