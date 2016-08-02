@@ -18,7 +18,6 @@ function redirectToSearch(){
  //  }
 
 function setup() {
-
     $(".login").click(redirectToLogin);
     $(".event").click(redirectToEvent);
 }
