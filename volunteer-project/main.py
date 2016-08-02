@@ -53,7 +53,7 @@ class LoginHandler(webapp2.RequestHandler):
 
 class SearchHandler(webapp2.RequestHandler):
 	def get(self):
-		#query = self.request.get("search_term", "default")
+		query = self.request.get("search_term", "default")
 
 		template = env.get_template("search.html")
 		self.response.write(template.render())

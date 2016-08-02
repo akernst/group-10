@@ -21,6 +21,6 @@ function setup() {
         if (e.which == 13) {
             window.location.replace("/search");
         }
-   
-
+   });
+}
 $(document).ready(setup)
