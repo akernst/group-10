@@ -1,4 +1,12 @@
-/*search bar*/
+html { 
+  background: url(/static/chicago.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*search bar*/ 
 #search {
    position: absolute;
    margin-left: 400px;
@@ -7,6 +15,13 @@
    top: 7px;
 }
 
+#about{
+    margin: 100px;
+    padding: 30px;
+    font-weight: bold;
+    font-size: 25px;
+    background: rgba(194, 194, 214, .75);
+}
 /*login button*/
 #login {
     position: absolute;
@@ -20,7 +35,9 @@
     text-align: center;
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     color: purple;
-    background-color: #c2c2d6; /*light grey*/
+    background-color: #c2c2d6;
+    border-radius: 10px 10px 10px 10px;
+} /*light grey*/
 }
 
 /*create an event button*/
@@ -56,31 +73,47 @@ h2
 }
 .feed-sheet {
     color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
 }
 .event-container {
-    height: 300px;
-    width: 300px;
-    max-height: 300px;
-    max-height: 300px;
+
     display: inline-block;
-    border: 2px solid black;
+    border: 4px solid #ff6666;
+    margin: 10px;
+    background-color: #cce6ff;
+    border-radius: 10px 10px 10px 10px;
 
 }
 /*text*/
 div p {
     display: block;
+    padding-left: 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+.img-container {
+    height: 300px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #cce6ff;
 }
 /*image*/
 div img {
     /*position: absolute;*/
-    max-width: 250px;
+    max-width: 275px;
+    max-height: 300px;
+    margin-top: auto;
+    margin-bottom: auto;
     width: auto;
     height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    position: center;
     border: 2px solid black;
+
 }
 
 div{
