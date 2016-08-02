@@ -50,10 +50,14 @@ class LoginHandler(webapp2.RequestHandler):
 
 		self.response.out.write('<html><body>%s</body></html>' % greeting)
 	
+
 class SearchHandler(webapp2.RequestHandler):
 	def get(self):
 		query = self.request.get("search_term", "default")
+
+		
 		template = env.get_template("search.html")
+		self.response.write(template.render())
 
 class CreateEvent(webapp2.RequestHandler):
 	def get(self):
