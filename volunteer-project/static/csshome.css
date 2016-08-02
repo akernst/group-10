@@ -60,11 +60,12 @@ h2
     border: 2px solid black;
 
 }
+/*text*/
 div p {
     position: absolute;
     display: block;
 }
-
+/*image*/
 div img {
     /*position: absolute;*/
     max-width: 300px;
