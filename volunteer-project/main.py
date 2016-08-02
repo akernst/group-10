@@ -20,7 +20,7 @@ import jinja2
 from google.appengine.api import images
 from google.appengine.api import users
 from event import Event 
-from user import VolUser 
+from user import User 
 import logging
 
 env = jinja2.Environment(
