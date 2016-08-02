@@ -1,9 +1,7 @@
 from google.appengine.ext import ndb
+from google.appengine.api import users
 
 
 class VolUser(ndb.Model):
-	name = ndb.StringProperty(required = True)
-	email = ndb.StringProperty(required = True)
-	age = ndb.IntegerProperty(required = False)
-	organizationinfo = ndb.StringProperty(required = False)
 	avatar = ndb.BlobProperty(required = False)
+	user_id = ndb.StringProperty(required = True)

@@ -18,8 +18,12 @@
     </li>
     <!--Log in-->
     <li>
-    <button id = "login" type="button">Log In</button>
+    {% if current_user %}
+    <a href = {{ logout }}><button id = "login" type="button">Hi {{current_user.nickname()}} Log Out</button></a>
+    {% else %}
+    <a href = {{ login }}><button id = "login" type="button">Log In</button></a>
     </li>
+    {% endif %}
   </ul></h1>
 </nav>
 
