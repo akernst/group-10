@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Welcome to iVolunteer!</title>
-        <link rel = "stylesheet" href = "/static/css/csshome.css">
+        <link rel = "stylesheet" href = "/static/csshome.css">
         <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script><!-- this is how you link jquery... google hosted libraries jquery has this -->
         <script src = "/static/jshome.js"></script>
     </head>
@@ -33,11 +33,12 @@
     			<p class="title"> {{ event.eventname }}</p>
     			<p class="eventinfo"> {{ event.eventinfo }}</p>  
     			<p class="date"> {{event.eventdate }}	</p>
-                <button type = "button" onclick = "alert('Thank you for signing up')"> Click here to sign up as a volunteer for this event </button>		
+                <button type = "button" class = "register"> Click here to sign up as a volunteer for this event </button>
         </div>
         {% endfor %}
         </div>
         {% endfor %}
+
 
         
     </body>

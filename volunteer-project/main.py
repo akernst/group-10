@@ -88,6 +88,8 @@ class CreateEvent(webapp2.RequestHandler):
 			profile = profile)
 		event.put()
 
+		self.redirect("/")
+
 class AboutHandler(webapp2.RequestHandler):
 	def get(self):
 		template = env.get_template("about.html")
@@ -105,7 +107,7 @@ class ImageHandler(webapp2.RequestHandler):
 
 class allEventsHandler(webapp2.RequestHandler):
 	def post(self):
-		self.response.out.write("hi")
+		logging.info(self.request.get("id"))
 
 		
 app = webapp2.WSGIApplication([

@@ -8,15 +8,24 @@ function redirectToSearch(){
     window.location.replace("/search")
 }
 
-function redirectToHome(){
+function printThanks(){
 	alert("Thanks for submitting your event! It is now added to our database.")
-	window.location.replace("/")
+	console.log()
 }
 
-function setup() {
+function signUp(){
+	var request = $.ajax({
+  	url: "/allEvents",
+  	method: "POST",
+  	data: { id : 1234 },
+});
+}
+
+ function setup() {
 
     $(".event").click(redirectToEvent);
-    $("#createform").click(redirectToHome)
-}
+    $("#createform").submit(printThanks)
+    $(".register").click(signUp)
+ }
 
 $(document).ready(setup)
