@@ -20,8 +20,9 @@
         <!--This will be the newsfeed-->
         {% for event in event_results %}
         <div>
-        Random text
-    			<div class="profile"> {{ event.profile }}</div>
+    			<div>
+    				<img src="/img?eventId={{ event.key.id }}"> 
+    			</div>
     			<p class="title"> {{ event.eventname }}</p>
     			<p class="eventinfo"> {{ event.eventinfo }}</p>  			
         </div>
