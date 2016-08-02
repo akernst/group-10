@@ -10,8 +10,6 @@ function redirectToSearch(){
     window.location.replace("/search")
 }
 
-
-
 function setup() {
 
     $(".login").click(redirectToLogin);
@@ -21,6 +19,6 @@ function setup() {
         if (e.which == 13) {
             window.location.replace("/search");
         }
-   });
+    });
 }
 $(document).ready(setup)
