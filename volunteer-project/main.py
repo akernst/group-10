@@ -53,9 +53,8 @@ class LoginHandler(webapp2.RequestHandler):
 
 class SearchHandler(webapp2.RequestHandler):
 	def get(self):
-		query = self.request.get("search_term", "default")
+		#query = self.request.get("search_term", "default")
 
-		
 		template = env.get_template("search.html")
 		self.response.write(template.render())
 
@@ -104,7 +103,7 @@ class allEventsHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
 	('/', MainHandler),
 	('/login', LoginHandler),
-	('/search',SearchHandler),
+	('/search', SearchHandler),
 	('/createEvent', CreateEvent),
 	('/about', AboutHandler),
 	('/allEvents', allEventsHandler),
