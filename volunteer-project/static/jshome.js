@@ -12,8 +12,8 @@ function redirectToSearch(){
 
 
 function setup() {
-    $("#login").click(redirectToLogin);
-    $("#event").click(redirectToEvent);
+    $(".login").click(redirectToLogin);
+    $(".event").click(redirectToEvent);
     $('#search').mouseenter(redirectToSearch);
 }
 $(document).ready(setup)

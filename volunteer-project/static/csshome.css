@@ -3,7 +3,7 @@
   margin-left: 700px;
 }
 
-#login {
+.login {
     position: absolute;
     top: 0px;
     right: 20px;
@@ -11,18 +11,20 @@
     bottom: 100px;
     height: 30px;
     border: 3px solid #00ffff;
+    font-size: 12px;
     text-align:center;
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     color: purple;
 }
 
+
+
+/*create an event button*/
 .event{
     padding: 10px 10px;
-    background-color: yellow; /* Green */
+    background-color: purple; /* Green */
     border: none;
-    color: purple;
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-    color: purple;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -32,14 +34,11 @@
     transition-duration: 0.4s;
     cursor: pointer;
 }
-
-
 .event1 {
     background-color: white;
-    color: black;
+    color: purple;
     border: 2px solid #4CAF50;
 }
-
 .event1:hover {
     background-color: #4CAF50;
     color: white;
