@@ -65,13 +65,19 @@ class CreateEvent(webapp2.RequestHandler):
 		self.response.out.write(template.render())
 	def post(self):
 		eventName = self.request.get('eventName')
-		eventinfo = self.request.get('description')
+		eventinfo = self.request.get('eventinfo')
 		eventdate = self.request.get('eventdate')
 		agereq = int(self.request.get('agereq'))
 		tags = self.request.get('tags')
-		profile = self.request.get('profile')
+		
+		profile = self.request.get('profile', "No-image-found.jpg")
 
-		event = Event(eventname = eventName, eventdate = eventdate, agereq = agereq, tags = tags, profile = profile)
+		event = Event(eventname = eventName,
+			eventdate = eventdate, 
+			eventinfo = eventinfo, 
+			agereq = agereq, 
+			tags = tags, 
+			profile = profile)
 		event.put()
 
 		self.response.out.write("Thank you for submitting your event")
