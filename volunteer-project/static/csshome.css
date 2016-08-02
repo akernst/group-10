@@ -54,12 +54,11 @@ h2
 }
 .feed-sheet {
     color: white;
+
+    width: 1000px;
 }
 .event-container {
-    height: 300px;
-    width: 300px;
-    max-height: 300px;
-    max-height: 300px;
+
     display: inline-block;
     border: 2px solid black;
 
@@ -67,11 +66,22 @@ h2
 /*text*/
 div p {
     display: block;
+    padding-left: 10px;
+}
+.img-container {
+    height: 300px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 /*image*/
 div img {
     /*position: absolute;*/
     max-width: 250px;
+    max-height: 250px;
+    margin-top: auto;
+    margin-bottom: auto;
     width: auto;
     height: auto;
     display: block;
@@ -79,6 +89,7 @@ div img {
     margin-right: auto;
     position: center;
     border: 2px solid black;
+
 }
 
 div{

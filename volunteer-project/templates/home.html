@@ -27,7 +27,7 @@
         <div class="feed-sheet">
         {% for event in chunk %}
         <div class="event-container">
-    			<div>
+    			<div class="img-container">
     				<img src="/img?eventId={{ event.key.id() }}"> 
     			</div>
     			<p class="title"> {{ event.eventname }}</p>
