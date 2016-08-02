@@ -10,15 +10,10 @@ function redirectToSearch(){
     window.location.replace("/search")
 }
 
- // var reader = new window.FileReader();
- // reader.readAsDataURL(blob); 
- // reader.onloadend = function() {
- //                base64data = reader.result;                
- //                console.log(base64data );
- //  }
 
 function setup() {
-    $(".login").click(redirectToLogin);
+
+    $("#login").click(redirectToLogin);
     $(".event").click(redirectToEvent);
 }
 

@@ -3,10 +3,10 @@
   margin-left: 700px;
 }
 
-.login {
+#login {
     position: absolute;
     top: 0px;
-    right: 20px;
+    right: 10px;
     width: 100px;
     bottom: 100px;
     height: 30px;

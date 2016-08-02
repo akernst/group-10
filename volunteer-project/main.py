@@ -84,13 +84,14 @@ class AboutHandler(webapp2.RequestHandler):
 
 class ImageHandler(webapp2.RequestHandler):
 	def get(self):
-
 		eventId = self.request.get("eventId")
 
 		# TODO: if we pass in something besides an int this will blow up
 		e = Event.get_by_id(int(eventId))
+
 		self.response.headers['Content-Type'] = 'image/jpeg'
 		self.response.out.write(e.profile)
+
 
 
 
