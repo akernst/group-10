@@ -48,9 +48,34 @@ h2
     text-decoration: underline;
     color: purple;
 }
+.feed-sheet {
+    color: white;
+}
+.event-container {
+    height: 300px;
+    width: 300px;
+    max-height: 300px;
+    max-height: 300px;
+    display: inline-block;
+    border: 2px solid black;
+
+}
+div p {
+    position: absolute;
+    display: block;
+}
+
+div img {
+    /*position: absolute;*/
+    max-width: 300px;
+    width: auto;
+    height: auto;
+    margin: 20px;
+    border: 2px solid black;
+}
 
 div{
-    background-color: #00ffff;
+    /*border: 2px solid black;*/
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     color: purple;
 }
@@ -105,8 +130,4 @@ li a:hover {
 }
 
 
-.event-container {
-    height: 100px;
-    width: 100px;
-}
 

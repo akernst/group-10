@@ -23,6 +23,7 @@
 
         <!--This will be the newsfeed-->
         {% for event in event_results %}
+        <div class="feed-sheet">
         <div class="event-container">
     			<div>
     				<img src="/img?eventId={{ event.key.id() }}"> 
@@ -30,6 +31,7 @@
     			<p class="title"> {{ event.eventname }}</p>
     			<p class="eventinfo"> {{ event.eventinfo }}</p>  
     			<p class="date"> {{event.eventdate }}	</p>		
+        </div>
         </div>
         {% endfor %}
 
