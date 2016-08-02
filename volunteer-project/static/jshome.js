@@ -1,6 +1,4 @@
-function redirectToLogin() {
-    window.location.replace("/login");
-}
+
 
 function redirectToEvent(){
     window.location.replace("/createEvent")
@@ -17,7 +15,6 @@ function redirectToHome(){
 
 function setup() {
 
-    $("#login").click(redirectToLogin);
     $(".event").click(redirectToEvent);
     $("#createform").click(redirectToHome)
 }

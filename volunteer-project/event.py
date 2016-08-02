@@ -10,3 +10,4 @@ class Event(ndb.Model):
 	agereq = ndb.IntegerProperty(required = True)
 	tags = ndb.StringProperty(required= False)
 	profile = ndb.BlobProperty(required = False)
+	signedUp = ndb.StringProperty(repeated = True)

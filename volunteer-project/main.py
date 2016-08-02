@@ -36,29 +36,21 @@ class MainHandler(webapp2.RequestHandler):
 		
 		data = {}
 		data["chunked_events"]= chunked_events
-		
-		template = env.get_template("home.html")
+		data["current_user"] = users.get_current_user()
+		data["login"] = users.create_login_url('/')
+		data["logout"] = users.create_logout_url('/')
 
-		self.response.write(template.render(data))
-
-
-
-class LoginHandler(webapp2.RequestHandler):
-	def get(self):
-		'''This section initiates the log in function'''
 
 		current_user = users.get_current_user()
 		if current_user:
-			name = current_user.nickname()
-			email = current_user.email()
 			greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
-			(name, users.create_logout_url('/')))
+			(current_user.nickname(), users.create_logout_url('/')))
 		else:
 			greeting = ('<a href="%s">Sign in or register</a>.' %
 			users.create_login_url('/'))
 
-		self.response.out.write('<html><body>%s</body></html>' % greeting)
-	
+		template = env.get_template("home.html")
+		self.response.write(template.render(data))
 
 class SearchHandler(webapp2.RequestHandler):
 	def get(self):
@@ -86,7 +78,6 @@ class CreateEvent(webapp2.RequestHandler):
 		eventdate = self.request.get('eventdate')
 		agereq = int(self.request.get('agereq'))
 		tags = self.request.get('tags')
-		
 		profile = self.request.get('profile', "No-image-found.jpg")
 
 		event = Event(eventname = eventName,
@@ -119,7 +110,6 @@ class allEventsHandler(webapp2.RequestHandler):
 		
 app = webapp2.WSGIApplication([
 	('/', MainHandler),
-	('/login', LoginHandler),
 	('/search', SearchHandler),
 	('/createEvent', CreateEvent),
 	('/about', AboutHandler),
