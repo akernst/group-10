@@ -81,10 +81,25 @@ class AboutHandler(webapp2.RequestHandler):
 		template = env.get_template("about.html")
 		self.response.out.write(template.render())
 
+class ImageHandler(webapp2.RequestHandler):
+	def get(self):
+
+		eventId = self.request.get("eventId")
+
+		# TODO: if we pass in something besides an int this will blow up
+		e = Event.get_by_id(int(eventId))
+		self.response.headers['Content-Type'] = 'image/jpeg'
+		self.response.out.write(e.profile)
+
+
+
 
 class allEventsHandler(webapp2.RequestHandler):
 	def post(self):
 		self.response.out.write("hi")
+
+
+
 		
 app = webapp2.WSGIApplication([
 	('/', MainHandler),
@@ -92,5 +107,6 @@ app = webapp2.WSGIApplication([
 	('/search', SearchHandler),
 	('/createEvent', CreateEvent),
 	('/about', AboutHandler),
-	('/allEvents', allEventsHandler)
+	('/allEvents', allEventsHandler),
+	('/img', ImageHandler)
 ], debug=True)
