@@ -61,16 +61,18 @@ h2
 
 }
 div p {
-    position: absolute;
     display: block;
 }
 
 div img {
     /*position: absolute;*/
-    max-width: 300px;
+    max-width: 250px;
     width: auto;
     height: auto;
-    margin: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: center;
     border: 2px solid black;
 }
 
