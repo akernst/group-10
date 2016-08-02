@@ -20,7 +20,7 @@ import jinja2
 from google.appengine.api import images
 from google.appengine.api import users
 from event import Event 
-from user import User 
+from voluser import VolUser 
 import logging
 
 env = jinja2.Environment(
@@ -50,7 +50,6 @@ class LoginHandler(webapp2.RequestHandler):
 			users.create_login_url('/'))
 
 		self.response.out.write('<html><body>%s</body></html>' % greeting)
-		user = users.get_current_user()
 	
 
 class SearchHandler(webapp2.RequestHandler):
