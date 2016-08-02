@@ -17,7 +17,7 @@ function signUp(){
 	var request = $.ajax({
   	url: "/allEvents",
   	method: "POST",
-  	data: { id : 1234 },
+  	data: { : 1234 },
 });
 }
 
