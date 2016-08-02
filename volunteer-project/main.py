@@ -15,6 +15,7 @@
 # limitations under the License.
 #
 import webapp2
+import json
 import jinja2
 from google.appengine.api import images
 from google.appengine.api import users
@@ -49,6 +50,7 @@ class LoginHandler(webapp2.RequestHandler):
 			users.create_login_url('/'))
 
 		self.response.out.write('<html><body>%s</body></html>' % greeting)
+		user = users.get_current_user()
 	
 
 class SearchHandler(webapp2.RequestHandler):
