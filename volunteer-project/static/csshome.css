@@ -1,5 +1,5 @@
 html { 
-  background: url(/static/1917710329.jpg) no-repeat center center fixed; 
+  background: url(/static/chicago.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -80,12 +80,14 @@ h2
     border: 4px solid #ff6666;
     margin: 10px;
     background-color: #cce6ff;
+    border-radius: 10px 10px 10px 10px;
 
 }
 /*text*/
 div p {
     display: block;
     padding-left: 10px;
+    border-radius: 10px 10px 10px 10px;
 }
 .img-container {
     height: 300px;
