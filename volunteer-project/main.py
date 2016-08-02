@@ -65,7 +65,7 @@ class CreateEvent(webapp2.RequestHandler):
 		self.response.out.write(template.render())
 	def post(self):
 		eventName = self.request.get('eventName')
-		eventinfo = self.request.get('description')
+		eventinfo = self.request.get('eventinfo')
 		eventdate = self.request.get('eventdate')
 		agereq = int(self.request.get('agereq'))
 		tags = self.request.get('tags')
