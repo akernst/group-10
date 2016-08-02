@@ -6,14 +6,17 @@ function redirectToEvent(){
     window.location.replace("/createEvent")
 }
 
-<<<<<<< HEAD
-=======
 function redirectToSearch(){
     window.location.replace("/search")
 }
 
+ // var reader = new window.FileReader();
+ // reader.readAsDataURL(blob); 
+ // reader.onloadend = function() {
+ //                base64data = reader.result;                
+ //                console.log(base64data );
+ //  }
 
->>>>>>> ad9904e712032fcaa388d814632dd895c0885c00
 function setup() {
     $("#login").click(redirectToLogin);
     $("#event").click(redirectToEvent);

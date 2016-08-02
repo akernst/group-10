@@ -15,6 +15,7 @@
 # limitations under the License.
 #
 import webapp2
+import json
 import jinja2
 from google.appengine.api import images
 from google.appengine.api import users
