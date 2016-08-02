@@ -15,10 +15,13 @@ html {
    top: 7px;
 }
 
-/*body{
-    background-color: ivory;
-}*/
-
+#about{
+    margin: 100px;
+    padding: 30px;
+    font-weight: bold;
+    font-size: 25px;
+    background: rgba(194, 194, 214, .5);
+}
 /*login button*/
 #login {
     position: absolute;
