@@ -109,14 +109,13 @@ class ImageHandler(webapp2.RequestHandler):
 		self.response.out.write(e.profile)
 
 
+<<<<<<< HEAD
+=======
 
-
-
+>>>>>>> f20fc4f8a35ca9f42387fc68ddbda0c506b5e149
 class allEventsHandler(webapp2.RequestHandler):
 	def post(self):
 		self.response.out.write("hi")
-
-
 
 		
 app = webapp2.WSGIApplication([
