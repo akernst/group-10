@@ -107,7 +107,13 @@ class ImageHandler(webapp2.RequestHandler):
 
 class allEventsHandler(webapp2.RequestHandler):
 	def post(self):
+
+		current_user = users.get_current_user()
 		logging.info(self.request.get("id"))
+		event = Event.get_by_id(int(self.request.get("id")))
+		event.signedUp.append(current_user.user_id())
+		print event.signedUp
+
 
 		
 app = webapp2.WSGIApplication([

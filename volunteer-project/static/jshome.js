@@ -13,11 +13,13 @@ function printThanks(){
 	console.log()
 }
 
-function signUp(){
+function signUp(event){
+
+	console.log(event.target.dataset.eventid)
 	var request = $.ajax({
   	url: "/allEvents",
   	method: "POST",
-  	data: { : 1234 },
+  	data: { id : event.target.dataset.eventid},
 });
 }
 
