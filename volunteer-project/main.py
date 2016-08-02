@@ -94,8 +94,6 @@ class CreateEvent(webapp2.RequestHandler):
 			profile = profile)
 		event.put()
 
-		self.response.out.write("Thank you for submitting your event")
-
 class AboutHandler(webapp2.RequestHandler):
 	def get(self):
 		template = env.get_template("about.html")
