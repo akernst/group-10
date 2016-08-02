@@ -20,7 +20,7 @@ html {
     padding: 30px;
     font-weight: bold;
     font-size: 25px;
-    background: rgba(194, 194, 214, .5);
+    background: rgba(194, 194, 214, .75);
 }
 /*login button*/
 #login {
