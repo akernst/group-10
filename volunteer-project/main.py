@@ -50,6 +50,7 @@ class LoginHandler(webapp2.RequestHandler):
 			users.create_login_url('/'))
 
 		self.response.out.write('<html><body>%s</body></html>' % greeting)
+		user = users.get_current_user()
 	
 
 class SearchHandler(webapp2.RequestHandler):
