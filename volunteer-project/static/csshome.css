@@ -17,8 +17,6 @@
     color: purple;
 }
 
-
-
 /*create an event button*/
 .event{
     padding: 10px 10px;
@@ -105,3 +103,10 @@ li a:hover {
         height: 100px;
         width: 400px;
 }
+
+
+.event-container {
+    height: 100px;
+    width: 100px;
+}
+
