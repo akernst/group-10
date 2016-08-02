@@ -110,8 +110,6 @@ class ImageHandler(webapp2.RequestHandler):
 
 
 
-
-
 class allEventsHandler(webapp2.RequestHandler):
 	def post(self):
 		self.response.out.write("hi")
