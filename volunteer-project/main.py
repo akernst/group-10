@@ -56,10 +56,19 @@ class LoginHandler(webapp2.RequestHandler):
 
 class SearchHandler(webapp2.RequestHandler):
 	def get(self):
+		# Gets the search term entered
 		query = self.request.get("search_term", "default")
 
+		# looks for search term in tags of events
+		event_query = Event.query().filter(Event.tags == query)
+		matchedEvents = event_query.fetch()
+
+		# puts entries into a ditionary
+		data = {}
+		data["matchedEvents"]=matchedEvents
+
 		template = env.get_template("search.html")
-		self.response.write(template.render())
+		self.response.write(template.render(data))
 
 class CreateEvent(webapp2.RequestHandler):
 	def get(self):
