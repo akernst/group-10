@@ -45,11 +45,19 @@ html {
     color: purple;
     background-color: #c2c2d6;
     border-radius: 10px 10px 10px 10px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+
 } /*light grey*/
+
+#login:hover {
+    background-color: grey;
+    color: white;
 }
 
+
 /*create an event button*/
-.event{
+.event {
     padding: 10px 10px;
     border: none;
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
