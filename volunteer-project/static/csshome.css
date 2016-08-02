@@ -22,6 +22,14 @@ html {
     font-size: 25px;
     background: rgba(194, 194, 214, .75);
 }
+
+#wholebox{
+    margin: 100px;
+    padding: 30px;
+    font-weight: bold;
+    font-size: 25px;
+    background: rgba(194, 194, 214, .75);
+}
 /*login button*/
 #login {
     position: absolute;
