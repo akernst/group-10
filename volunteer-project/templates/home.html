@@ -5,7 +5,6 @@
         <link rel = "stylesheet" href = "/static/css/csshome.css">
     </head>
 
-
     <body>
         <!-- Links to Navigation Bar -->
         {% include 'navBar.html' %}
@@ -13,13 +12,13 @@
         <br>
         <br>
         <br>
-        <button id = "event" type="submit">Click here to create a new event</button>
+        <button id = "event" type="submit">Click here to create a new Event</button>
         
         <!--This will be the newsfeed-->
         {% for event in event_results %}
         <div>
         Random text
-    			<div class="profile"> {{ event.profile.decode('base64') }}</div>
+    			<div class="profile"> {{ event.profile }}</div>
     			<p class="title"> {{ event.eventname }}</p>
     			<p class="eventinfo"> {{ event.eventinfo }}</p>  			
         </div>

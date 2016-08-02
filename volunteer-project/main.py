@@ -33,13 +33,9 @@ class MainHandler(webapp2.RequestHandler):
 		data = {}
 		data["event_results"]= event_results
 		
-
 		template = env.get_template("home.html")
 
 		self.response.write(template.render(data))
-
-
-
 
 class LoginHandler(webapp2.RequestHandler):
 	def get(self):
