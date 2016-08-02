@@ -1,17 +1,21 @@
+/*search bar*/
 #search {
-  /* position is static by default */
-  margin-left: 700px;
+   position: absolute;
+   margin-left: 400px;
+   width: 200px;
+   height: 20px;
+   top: 7px;
 }
 
 #login {
     position: absolute;
     top: 0px;
-    right: 10px;
-    width: 100px;
+    right: 40px;
+    width: 115px;
     bottom: 100px;
-    height: 30px;
+    height: 40px;
     border: 3px solid #00ffff;
-    font-size: 12px;
+    font-size: 18px;
     text-align:center;
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     color: purple;
@@ -37,7 +41,7 @@
     border: 2px solid ;
 }
 .event1:hover {
-    background-color: ;
+    background-color: grey;
     color: white;
 }
 
@@ -60,10 +64,11 @@ h2
     border: 2px solid black;
 
 }
+/*text*/
 div p {
     display: block;
 }
-
+/*image*/
 div img {
     /*position: absolute;*/
     max-width: 250px;
@@ -87,9 +92,13 @@ div{
 #title {
         font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
         color: purple;
-        margin: 10px;
+        margin: 15px;
+        text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+        font-size: 40px;
+        margin: 4px 2px;
     }
 
+/*ivolunteer tab*/
 ul {
         position: fixed;
         top: 0;
@@ -98,8 +107,13 @@ ul {
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: grey;
-        border-bottom: 10px solid #bbb;
+        background-color: #cce6ff;
+        border-bottom: 7px solid  #ff6666;
+}
+
+.tab {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    color: purple;
 }
 
 li {
@@ -107,8 +121,8 @@ li {
 }
 
 li a {
-        background-color: grey;
-        font-size: 18px;
+        background-color: #cce6ff;
+        font-size: 24px;
         display: block;
         text-align: center;
         padding: 16px;
@@ -123,7 +137,7 @@ li a:link {
 
 /* Change the link color on hover */
 li a:hover {
-        color:lightblue
+        color: lightblue;
 }
 
 #descriptionBox {
