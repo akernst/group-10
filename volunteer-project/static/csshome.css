@@ -1,8 +1,10 @@
+/*search bar*/
 #search {
-  /* position is static by default */
-  margin-left: 400px;
+   position: absolute;
+   margin-left: 400px;
    width: 200px;
    height: 20px;
+   top: 7px;
 }
 
 #login {
@@ -39,7 +41,7 @@
     border: 2px solid ;
 }
 .event1:hover {
-    background-color: ;
+    background-color: grey;
     color: white;
 }
 
