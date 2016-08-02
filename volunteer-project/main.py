@@ -31,8 +31,10 @@ class MainHandler(webapp2.RequestHandler):
 		event_query = Event.query()
 		event_results = event_query.fetch()
 
+		chunked_events = [event_results[i:i+3] for i in xrange(0, len(event_results), 3)]
+		
 		data = {}
-		data["event_results"]= event_results
+		data["chunked_events"]= chunked_events
 		
 		template = env.get_template("home.html")
 
