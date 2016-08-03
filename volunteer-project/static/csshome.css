@@ -42,8 +42,8 @@ html {
     border: 3px solid #ff6666; /* salmon */
     font-size: 18px;
     text-align: center;
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-    color: purple;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", AppleGothic, sans-serif;
+    color: black;
     background-color: #c2c2d6;
     border-radius: 10px 10px 10px 10px;
     -webkit-transition-duration: 0.4s; /* Safari */
@@ -66,8 +66,8 @@ html {
     border: 3px solid #ff6666; /* salmon */
     font-size: 15px;
     text-align: center;
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-    color: purple;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", AppleGothic, sans-serif;
+    color: black;
     background-color: #c2c2d6;
     border-radius: 10px 10px 10px 10px;
     -webkit-transition-duration: 0.4s; /* Safari */
@@ -79,7 +79,7 @@ html {
 .event {
     padding: 10px 10px;
     border: none;
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", AppleGothic, sans-serif;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -89,7 +89,7 @@ html {
     transition-duration: 0.4s;
     cursor: pointer;
     background-color: #c2c2d6; /*light grey*/
-    color: purple;
+    color: black;
     border: 2px solid #ff6666; /* salmon */;
     border-radius: 9px 9px 9px 9px;
 }
@@ -101,7 +101,7 @@ html {
 .register{
     padding: 5px 5px;
     border: none;
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", AppleGothic, sans-serif;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -111,7 +111,7 @@ html {
     transition-duration: 0.4s;
     cursor: pointer;
     background-color: #c2c2d6; /*light grey*/
-    color: purple;
+    color: black;
     border: 2px solid #ff6666; /* salmon */;
     text-align: center;
     border-radius: 8px 8px 8px 8px;
@@ -127,9 +127,9 @@ html {
 h2
 /*create event title*/
 {
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", AppleGothic, sans-serif;
     text-decoration: underline;
-    color: purple;
+    color: black;
 }
 .feed-sheet {
     color: white;
@@ -197,18 +197,23 @@ div img {
 
 div{
     /*border: 2px solid black;*/
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-    color: purple;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", AppleGothic, sans-serif;
+    color: black;
 }
 
 /*Sections formatting defined*/
 
 #title {
-        font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+<<<<<<< HEAD
+        font-family: 'Unica One', cursive;
+        font-size: 60px;
         color: purple;
+=======
+        font-family: "Unica One", "Lucida Grande", AppleGothic, sans-serif;
+        color: black;
+>>>>>>> 24cf3683fe172fb3a6f17a54dc79d86a41dac866
         margin: 15px;
         text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
-        font-size: 40px;
         margin: 4px 2px;
     }
 .title {
@@ -236,8 +241,8 @@ ul {
 }
 
 .tab {
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-    color: purple;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", AppleGothic, sans-serif;
+    color: black;
 }
 
 li {
