@@ -204,11 +204,11 @@ div{
 /*Sections formatting defined*/
 
 #title {
-        font-family: "Lucida Sans Unicode", "Lucida Grande", AppleGothic, sans-serif;
+        font-family: 'Unica One', cursive;
+        font-size: 60px;
         color: purple;
         margin: 15px;
         text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
-        font-size: 40px;
         margin: 4px 2px;
     }
 .title {
