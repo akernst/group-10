@@ -36,15 +36,16 @@
     			</div>
                 
     			<p class="title"> {{ event.eventname }}</p>
-                <p class="line-above">Event name:</p>
-                
+                <p class="line-above special-center">Event Name</p>
+
                 <p class="line-above">Description:</p>
     			<p class="eventinfo">{{ event.eventinfo }}</p>
 
-                <p class="line-above">Date:</p>
-    			<p class="date"> Date: {{event.eventdate }}	</p>
-                <p class = "location"> Locaiton: {{ event.location }} </p>
-                <p class = "creator"> Posted by: {{ event.creator }} </p>
+    			<p class="date"> <em>Date:</em> {{event.eventdate }}</p>
+
+                <p class = "location"> <em>Location:</em> {{ event.location }}</p>
+                <p class = "creator"> <em>Posted by:</em> {{ event.creator }}</p>
+
                 <button class = "register" data-eventid = "{{ event.key.id() }}" > Click here to sign up as a volunteer for this event </button>
         </div>
         {% endfor %}

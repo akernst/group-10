@@ -86,7 +86,9 @@ html {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
-
+.creator {
+    margin-left: 10px;
+}
 
 /*create an event button*/
 .event {
@@ -170,6 +172,21 @@ div p {
     height: 50px;
     margin: 0;
 }
+.line-above {
+    font-size: 10px;
+    font-color: gray;
+    height: 10px;
+    margin-left: 10px;
+
+}
+.special-center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 .eventinfo {
     max-height: 50px;
     max-width: 300px;
@@ -179,7 +196,7 @@ div p {
 .date {
     padding-left: 10px;
     height: 25px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 .img-container {
     height: 300px;
@@ -188,6 +205,10 @@ div p {
     justify-content: center;
     flex-direction: column;
     background-color: #cce6ff;
+}
+.location {
+    margin-left: 10px;
+    height: 25px;
 }
 .register {
     position: absolute;
@@ -235,6 +256,7 @@ div{
     color: red;
     font-size: 20px;
     text-align: center;
+    height: 20px;
 }
 
 /*ivolunteer tab*/
