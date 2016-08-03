@@ -8,11 +8,12 @@ html {
 
 /*search bar*/ 
 #search {
-   position: absolute;
+   position: relative;
    margin-left: 400px;
    width: 200px;
    height: 20px;
    top: 7px;
+   right: 225px;
 }
 
 #about{
