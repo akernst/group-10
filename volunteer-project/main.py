@@ -106,7 +106,7 @@ class CreateEvent(webapp2.RequestHandler):
 			creator = creator)
 			
 		event.put()
-
+		
 		time.sleep(0.5)
 		self.redirect('/')
 		
