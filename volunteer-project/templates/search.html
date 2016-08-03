@@ -21,15 +21,23 @@
 
         <div class="feed-sheet">
         {% for event in chunk %}
-        <div class="event-container">
+        <div class="event-container" class="effect">
                 <div class="img-container">
                     <img src="/img?eventId={{ event.key.id() }}"> 
                 </div>
+                
                 <p class="title"> {{ event.eventname }}</p>
-                <p class="eventinfo"> {{ event.eventinfo }}</p>  
-                <p class="date"> {{event.eventdate }}   </p>
+                <p class="line-above special-center">Event Name</p>
 
-                <button type = "button" class = "register" data-eventid = "{{ event.key.id() }}" > Click here to sign up as a volunteer for this event </button>
+                <p class="line-above">Description:</p>
+                <p class="eventinfo">{{ event.eventinfo }}</p>
+
+                <p class="date"> <em>Date:</em> {{event.eventdate }}</p>
+
+                <p class = "location"> <em>Location:</em> {{ event.location }}</p>
+                <p class = "creator"> <em>Posted by:</em> {{ event.creator }}</p>
+
+                <button class = "register" data-eventid = "{{ event.key.id() }}" > Click here to sign up as a volunteer for this event </button>
         </div>
         {% endfor %}
         </div>
