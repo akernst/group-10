@@ -19,7 +19,9 @@
     <!--Search Bar-->
     <li>
     	<form id="form1" method="get" action="/search">
-        <input id = "search" type="text" name="search_term"> 	
+
+        <input id = "search" type="text" name="search_term"> 
+        <!-- <label for="search_term">Search</label>	 -->
 		</form>
     </li>
     <!--Log in-->
@@ -31,6 +33,23 @@
   </ul></h1>
 </nav>
 
+<!-- <script type="text/javascript"> -->
+        (function () {
+            var nonEmpty = "non-empty";
+            var inputs = jQuery('.slim-control input');
+            var setLabelStyle = function setLabelStyle () {
+                var label = jQuery(this);
+                if (label.val().length) {
+                    label.addClass(nonEmpty);
+                } else {
+                    label.removeClass(nonEmpty);
+                }
+            };
+            inputs.focus(function () { jQuery(this).addClass(nonEmpty); });
+            inputs.blur(setLabelStyle);
+            inputs.each(setLabelStyle);
+        }());
+<!-- </script> -->
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 <script src="/static/jshome.js"></script>
