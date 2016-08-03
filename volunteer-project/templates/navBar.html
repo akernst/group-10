@@ -22,7 +22,7 @@
     </li>
     <!--Log in-->
     {% if current_user %}
-    <a href = {{ logout }}><button id = "login" type="button">Hi {{current_user.nickname()}} Log Out</button></a>
+    <a href = {{ logout }}><button id = "loggedin" type="button">Hi {{current_user.nickname()}}! <br>Log Out</button></a>
     {% else %}
     <a href = {{ login }}><button id = "login" type="button">Log In</button></a>
     {% endif %}

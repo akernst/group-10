@@ -2,6 +2,8 @@
 <html>
 
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src = "/static/jshome.js"></script>
+<link rel = "stylesheet" href = "/static/csshome.css">
 
     <body>
         <!-- Links to Navigation Bar -->
@@ -23,7 +25,11 @@
                 <p class="title"> {{ event.eventname }}</p>
                 <p class="eventinfo"> {{ event.eventinfo }}</p>  
                 <p class="date"> {{event.eventdate }}   </p>
+<<<<<<< HEAD
                 <button type = "button"> Click here to sign up as a volunteer for this event </button>        
+=======
+                <button type = "button" class = "register" data-eventid = "{{ event.key.id() }}" > Click here to sign up as a volunteer for this event </button>
+>>>>>>> f9c62e6a5a990ee1756b719e2b2e4d58365dc73d
         </div>
         {% endfor %}
         </div>

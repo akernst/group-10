@@ -21,6 +21,10 @@
     <button class = "event" type="submit">Click here to create a new event</button>
 
 
+      <!--Filter-->
+
+
+
         <!--This will be the newsfeed-->
         {% for chunk in chunked_events %}
 
@@ -33,7 +37,7 @@
     			<p class="title"> {{ event.eventname }}</p>
     			<p class="eventinfo"> {{ event.eventinfo }}</p>  
     			<p class="date"> {{event.eventdate }}	</p>
-                <button type = "button" class = "register" data-eventid = "{{ event.key.id() }}" > Click here to sign up as a volunteer for this event </button>
+                <button class = "register" data-eventid = "{{ event.key.id() }}" > Click here to sign up as a volunteer for this event </button>
         </div>
         {% endfor %}
         </div>

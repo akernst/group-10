@@ -12,7 +12,7 @@ function printThanks(){
 	alert("Thanks for submitting your event! It is now added to our database.")
 }
 
-function signUp(event){
+function signUp(){
 
 	var request = $.ajax({
   	url: "/allEvents",
@@ -25,7 +25,7 @@ function signUp(event){
  function setup() {
 
     $(".event").click(redirectToEvent);
-    $("#createform").submit(printThanks)
+    $("#createform").submit(printThanks);
     $(".register").click(signUp)
  }
 
