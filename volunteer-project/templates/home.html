@@ -34,8 +34,14 @@
     			<div class="img-container">
     				<img src="/img?eventId={{ event.key.id() }}"> 
     			</div>
-    			<p class="title"> Event name:  {{ event.eventname }}</p>
-    			<p class="eventinfo"> Description: {{ event.eventinfo }}</p>  
+                
+    			<p class="title"> {{ event.eventname }}</p>
+                <p class="line-above">Event name:</p>
+                
+                <p class="line-above">Description:</p>
+    			<p class="eventinfo">{{ event.eventinfo }}</p>
+
+                <p class="line-above">Date:</p>
     			<p class="date"> Date: {{event.eventdate }}	</p>
                 <p class = "location"> Locaiton: {{ event.location }} </p>
                 <p class = "creator"> Posted by: {{ event.creator }} </p>
