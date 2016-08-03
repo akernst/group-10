@@ -10,7 +10,6 @@ function redirectToSearch(){
 
 function printThanks(){
 	alert("Thanks for submitting your event! It is now added to our database.")
-	console.log()
 }
 
 function signUp(event){
@@ -19,8 +18,8 @@ function signUp(event){
   	url: "/allEvents",
   	method: "POST",
   	data: { id : event.target.dataset.eventid},
-    alert("Thank you for signing up! This event has been added to your events")
 });
+  alert("Thank you for signing up! This event has been added to your events")
 }
 
  function setup() {
