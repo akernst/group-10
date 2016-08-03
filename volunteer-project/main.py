@@ -126,11 +126,8 @@ class myEventsHandler(webapp2.RequestHandler):
 		# makes sure that user is logged in
 		if users.get_current_user():
 			# looks for nickname of current user
-			logging.info(Event.signedUp)
 			event_query = Event.query().filter(Event.signedUp.IN(['185804764220139124118']))
-			logging.info(event_query)
 			myEvents = event_query.fetch()
-			logging.info(myEvents)
 
 			my_events = [myEvents[i:i+3] for i in xrange(0, len(myEvents), 3)]
 
