@@ -104,6 +104,15 @@ class AboutHandler(webapp2.RequestHandler):
 		template = env.get_template("about.html")
 		self.response.out.write(template.render())
 
+class myEventsHandler(webapp2.RequestHandler):
+	def post(self):
+		data = {}
+		data["login"] = users.create_login_url('/')
+		data["logout"] = users.create_logout_url('/')
+
+		template = env.get_template("myevents.html")
+		self.response.out.write(template.render(data))
+
 class ImageHandler(webapp2.RequestHandler):
 	def get(self):
 		eventId = self.request.get("eventId")
@@ -124,11 +133,13 @@ class allEventsHandler(webapp2.RequestHandler):
 		print event.signedUp
 
 
+
 app = webapp2.WSGIApplication([
 	('/', MainHandler),
 	('/search', SearchHandler),
 	('/createEvent', CreateEvent),
 	('/about', AboutHandler),
+	('/myevents', myEventsHandler),
 	('/allEvents', allEventsHandler),
 	('/img', ImageHandler)
 ], debug=True)
