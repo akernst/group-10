@@ -78,6 +78,31 @@ html {
     color: white;
 }
 
+.register{
+    padding: 5px 5px;
+    border: none;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 10px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: #c2c2d6; /*light grey*/
+    color: purple;
+    border: 2px solid #ff6666; /* salmon */;
+    text-align: center;
+}
+
+.register: hover{
+    background-color: grey;
+    color: white;
+}
+
+
+
 h2
 /*create event title*/
 {
