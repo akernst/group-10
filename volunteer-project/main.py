@@ -79,13 +79,15 @@ class CreateEvent(webapp2.RequestHandler):
 		agereq = int(self.request.get('agereq'))
 		tags = self.request.get('tags')
 		profile = self.request.get('profile', "No-image-found.jpg")
+		creator = users.get_current_user()
 
 		event = Event(eventname = eventName,
 			eventdate = eventdate, 
 			eventinfo = eventinfo, 
 			agereq = agereq, 
 			tags = tags, 
-			profile = profile)
+			profile = profile,
+			creator = creator)
 		event.put()
 
 		self.redirect("/")
@@ -113,6 +115,7 @@ class allEventsHandler(webapp2.RequestHandler):
 		event = Event.get_by_id(int(self.request.get("id")))
 		event.signedUp.append(current_user.user_id())
 		print event.signedUp
+
 
 
 		
