@@ -33,14 +33,6 @@ class MainHandler(webapp2.RequestHandler):
 		event_query = Event.query()
 		event_results = event_query.fetch()
 		chunked_events = [event_results[i:i+3] for i in xrange(0, len(event_results), 3)]
-		# zipcode = self.request.get("zipcode")
-		# if zipcode == "":
-		# 	chunked_events = [event_results[i:i+3] for i in xrange(0, len(event_results), 3)]
-		# else:
-		# 	chunked_events = []
-		# 	for event in event_results:
-		# 		if event.location == zipcode:
-		# 			chunked_events.append(event)
 		
 		data = {}
 		data["chunked_events"]= chunked_events
