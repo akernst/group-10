@@ -110,10 +110,6 @@ class CreateEvent(webapp2.RequestHandler):
 class AboutHandler(webapp2.RequestHandler):
 	def get(self):
 
-		# looks for search term in tags of events
-		event_query = Event.query().filter(Event.nickname == users.get_current_user().nickname() )
-		myEvents = event_query.fetch()
-
 		data = {}
 		data["current_user"] = users.get_current_user()
 		data["login"] = users.create_login_url('/')
@@ -123,17 +119,25 @@ class AboutHandler(webapp2.RequestHandler):
 		self.response.out.write(template.render(data))
 
 class myEventsHandler(webapp2.RequestHandler):
+
 	def get(self):
 
 		# makes sure that user is logged in
 		if users.get_current_user():
 			# looks for nickname of current user
-			event_query = Event.query().filter(Event.tags == query)
-			matchedEvents = event_query.fetch()
+			event_query = Event.query().filter(Event.signedUp.IN([users.get_current_user().user_id()]))
+			logging.info(event_query)
+			myEvents = event_query.fetch()
+			logging.info(myEvents)
 
-			matched_Events = [matchedEvents[i:i+3] for i in xrange(0, len(matchedEvents), 3)]
+			my_events = [myEvents[i:i+3] for i in xrange(0, len(myEvents), 3)]
 
 			# puts entries into a ditionary
+			data = {}
+			data["my_events"]= my_events
+			data["current_user"] = users.get_current_user()
+			data["login"] = users.create_login_url('/')
+			data["logout"] = users.create_logout_url('/')
 
 
 			template = env.get_template("myevents.html")

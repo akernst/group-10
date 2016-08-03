@@ -15,6 +15,23 @@
         <br>
         <br>
 
+    <!--This will be the newsfeed-->
+        {% for chunk in my_events %}
+
+        <div class="feed-sheet">
+        {% for event in chunk %}
+        <div class="event-container">
+                <div class="img-container">
+                    <img src="/img?eventId={{ event.key.id() }}"> 
+                </div>
+                <p class="title"> {{ event.eventname }}</p>
+                <p class="eventinfo"> {{ event.eventinfo }}</p>  
+                <p class="date"> {{event.eventdate }}   </p>
+                <button type = "button" onclick = "alert('Thank you for signing up!')"> Click here to sign up as a volunteer for this event </button>        
+        </div>
+        {% endfor %}
+        </div>
+        {% endfor %}
 
 </html>
 
