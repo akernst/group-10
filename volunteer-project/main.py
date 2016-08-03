@@ -40,15 +40,6 @@ class MainHandler(webapp2.RequestHandler):
 		data["login"] = users.create_login_url('/')
 		data["logout"] = users.create_logout_url('/')
 
-
-		current_user = users.get_current_user()
-		if current_user:
-			greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
-			(current_user.nickname(), users.create_logout_url('/')))
-		else:
-			greeting = ('<a href="%s">Sign in or register</a>.' %
-			users.create_login_url('/'))
-
 		template = env.get_template("home.html")
 		self.response.write(template.render(data))
 
@@ -64,14 +55,27 @@ class SearchHandler(webapp2.RequestHandler):
 		# puts entries into a ditionary
 		data = {}
 		data["matchedEvents"]=matchedEvents
+		data["current_user"] = users.get_current_user()
+		data["login"] = users.create_login_url('/')
+		data["logout"] = users.create_logout_url('/')
 
 		template = env.get_template("search.html")
 		self.response.write(template.render(data))
 
 class CreateEvent(webapp2.RequestHandler):
 	def get(self):
-		template = env.get_template("createEvent.html")
-		self.response.out.write(template.render())
+
+		data = {}
+		data["current_user"] = users.get_current_user()
+		data["login"] = users.create_login_url('/')
+		data["logout"] = users.create_logout_url('/')
+
+		if users.get_current_user:
+			template = env.get_template("createEvent.html")
+			self.response.out.write(template.render(data))
+		else:
+			self.redirect("users.create_login_url()")
+
 	def post(self):
 		eventName = self.request.get('eventName')
 		eventinfo = self.request.get('eventinfo')
@@ -94,8 +98,23 @@ class CreateEvent(webapp2.RequestHandler):
 
 class AboutHandler(webapp2.RequestHandler):
 	def get(self):
+
+		data = {}
+		data["current_user"] = users.get_current_user()
+		data["login"] = users.create_login_url('/')
+		data["logout"] = users.create_logout_url('/')
+
 		template = env.get_template("about.html")
-		self.response.out.write(template.render())
+		self.response.out.write(template.render(data))
+
+class myEventsHandler(webapp2.RequestHandler):
+	def post(self):
+		data = {}
+		data["login"] = users.create_login_url('/')
+		data["logout"] = users.create_logout_url('/')
+
+		template = env.get_template("myevents.html")
+		self.response.out.write(template.render(data))
 
 class ImageHandler(webapp2.RequestHandler):
 	def get(self):
@@ -118,12 +137,12 @@ class allEventsHandler(webapp2.RequestHandler):
 
 
 
-		
 app = webapp2.WSGIApplication([
 	('/', MainHandler),
 	('/search', SearchHandler),
 	('/createEvent', CreateEvent),
 	('/about', AboutHandler),
+	('/myevents', myEventsHandler),
 	('/allEvents', allEventsHandler),
 	('/img', ImageHandler)
 ], debug=True)

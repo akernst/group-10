@@ -9,6 +9,7 @@
   <h1><ul>
     <li><a class = "tab" href = "/">Home</a></li>
     <li><a class = "tab" href = "/about">About</a><li>
+    <li><a class = "tab" href = "/myEvents">My Events</a><li>
     <li id = "title">iVolunteer</li>
     <!--Search Bar-->
     <li>
@@ -17,12 +18,10 @@
 		</form>
     </li>
     <!--Log in-->
-    <li>
     {% if current_user %}
     <a href = {{ logout }}><button id = "login" type="button">Hi {{current_user.nickname()}} Log Out</button></a>
     {% else %}
     <a href = {{ login }}><button id = "login" type="button">Log In</button></a>
-    </li>
     {% endif %}
   </ul></h1>
 </nav>
