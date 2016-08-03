@@ -15,12 +15,12 @@ function printThanks(){
 
 function signUp(event){
 
-	console.log(event.target.dataset.eventid)
 	var request = $.ajax({
   	url: "/allEvents",
   	method: "POST",
   	data: { id : event.target.dataset.eventid},
 });
+  alert("Thank you for signing up! This event has been added to your events")
 }
 
  function setup() {
