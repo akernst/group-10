@@ -83,7 +83,7 @@ class CreateEvent(webapp2.RequestHandler):
 		agereq = int(self.request.get('agereq'))
 		tags = self.request.get('tags')
 		profile = self.request.get('profile', "No-image-found.jpg")
-		creator = users.get_current_user()
+		creator = users.get_current_user().nickname()
 
 		event = Event(eventname = eventName,
 			eventdate = eventdate, 
