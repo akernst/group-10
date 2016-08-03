@@ -55,6 +55,7 @@ class SearchHandler(webapp2.RequestHandler):
 		# puts entries into a ditionary
 		data = {}
 		data["matchedEvents"]=matchedEvents
+		data["current_user"] = users.get_current_user()
 		data["login"] = users.create_login_url('/')
 		data["logout"] = users.create_logout_url('/')
 
@@ -65,12 +66,13 @@ class CreateEvent(webapp2.RequestHandler):
 	def get(self):
 
 		data = {}
+		data["current_user"] = users.get_current_user()
 		data["login"] = users.create_login_url('/')
 		data["logout"] = users.create_logout_url('/')
 
 		if users.get_current_user:
 			template = env.get_template("createEvent.html")
-			self.response.out.write(template.render())
+			self.response.out.write(template.render(data))
 		else:
 			self.redirect("users.create_login_url()")
 
@@ -98,11 +100,12 @@ class AboutHandler(webapp2.RequestHandler):
 	def get(self):
 
 		data = {}
+		data["current_user"] = users.get_current_user()
 		data["login"] = users.create_login_url('/')
 		data["logout"] = users.create_logout_url('/')
 
 		template = env.get_template("about.html")
-		self.response.out.write(template.render())
+		self.response.out.write(template.render(data))
 
 class ImageHandler(webapp2.RequestHandler):
 	def get(self):
