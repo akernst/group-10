@@ -108,7 +108,7 @@ class AboutHandler(webapp2.RequestHandler):
 		self.response.out.write(template.render(data))
 
 class myEventsHandler(webapp2.RequestHandler):
-	def post(self):
+	def get(self):
 		data = {}
 		data["login"] = users.create_login_url('/')
 		data["logout"] = users.create_logout_url('/')
