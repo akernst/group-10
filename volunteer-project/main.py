@@ -73,7 +73,7 @@ class SearchHandler(webapp2.RequestHandler):
 		self.response.write(template.render(data))
 
 class CreateEvent(webapp2.RequestHandler):
-	
+
 	def get(self):
 
 		data = {}
@@ -126,10 +126,8 @@ class myEventsHandler(webapp2.RequestHandler):
 		# makes sure that user is logged in
 		if users.get_current_user():
 			# looks for nickname of current user
-			event_query = Event.query().filter(Event.signedUp.IN([users.get_current_user().user_id()]))
-			logging.info(event_query)
+			event_query = Event.query().filter(Event.signedUp.IN(['185804764220139124118']))
 			myEvents = event_query.fetch()
-			logging.info(myEvents)
 
 			my_events = [myEvents[i:i+3] for i in xrange(0, len(myEvents), 3)]
 
@@ -143,6 +141,8 @@ class myEventsHandler(webapp2.RequestHandler):
 
 			template = env.get_template("myevents.html")
 			self.response.out.write(template.render(data))
+		else:
+			self.redirect(users.create_login_url('/'))
 
 class ImageHandler(webapp2.RequestHandler):
 	def get(self):
@@ -162,6 +162,7 @@ class allEventsHandler(webapp2.RequestHandler):
 		event = Event.get_by_id(int(self.request.get("id")))
 		event.signedUp.append(current_user.user_id())
 		print event.signedUp
+		event.put()
 
 
 
