@@ -6,6 +6,10 @@ html {
   background-size: cover;
 }
 
+#handlogo{
+    width:90px;height:70px; position:absolute; right:550px
+
+}
 /*search bar*/ 
 #search {
    position: absolute;
@@ -17,8 +21,12 @@ html {
    /*right: 200px;*/
 =======
    top: 17px;
+<<<<<<< HEAD
    right: 225px;
 >>>>>>> 4ffbc49d51c7673a995f96a5b3566d0c0d232eb2
+=======
+   right: 315px;
+>>>>>>> c7baa10a49fd7c96d604496c2041cfa4c86d0a23
 }
 
 #about{

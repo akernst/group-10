@@ -22,6 +22,7 @@ from google.appengine.api import users
 from event import Event 
 from voluser import VolUser 
 import logging
+import time
 
 env = jinja2.Environment(
 	loader=jinja2.FileSystemLoader("templates"))
@@ -92,11 +93,13 @@ class CreateEvent(webapp2.RequestHandler):
 		eventinfo = self.request.get('eventinfo')
 		eventdate = self.request.get('eventdate')
 		agereq = int(self.request.get('agereq'))
+		location = self.request.get('zipcode')
 		tags = self.request.get('tags')
 		profile = self.request.get('profile', "No-image-found.jpg")
 		creator = users.get_current_user().nickname()
 
 		event = Event(eventname = eventName,
+			location = location,
 			eventdate = eventdate, 
 			eventinfo = eventinfo, 
 			agereq = agereq, 
@@ -106,7 +109,9 @@ class CreateEvent(webapp2.RequestHandler):
 			
 		event.put()
 
-		self.redirect("/")
+		time.sleep(0.5)
+		self.redirect('/')
+		
 
 class AboutHandler(webapp2.RequestHandler):
 	def get(self):
@@ -126,7 +131,7 @@ class myEventsHandler(webapp2.RequestHandler):
 		# makes sure that user is logged in
 		if users.get_current_user():
 			# looks for nickname of current user
-			event_query = Event.query().filter(Event.signedUp.IN(['185804764220139124118']))
+			event_query = Event.query().filter(Event.signedUp.IN([users.get_current_user().user_id()]))
 			myEvents = event_query.fetch()
 
 			my_events = [myEvents[i:i+3] for i in xrange(0, len(myEvents), 3)]
