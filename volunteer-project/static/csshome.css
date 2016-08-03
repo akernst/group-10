@@ -8,12 +8,17 @@ html {
 
 /*search bar*/ 
 #search {
-   position: relative;
-   margin-left: 400px;
+   position: absolute;
+   margin-left: 600px;
    width: 200px;
    height: 20px;
+<<<<<<< HEAD
    top: 7px;
    /*right: 200px;*/
+=======
+   top: 17px;
+   right: 225px;
+>>>>>>> 4ffbc49d51c7673a995f96a5b3566d0c0d232eb2
 }
 
 #about{
@@ -34,7 +39,7 @@ html {
 /*login button*/
 #login {
     position: absolute;
-    top: 0px;
+    top: 10px;
     right: 40px;
     width: 115px;
     bottom: 100px;
@@ -210,6 +215,7 @@ div{
         margin: 15px;
         text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
         margin: 4px 2px;
+        margin-left: 10px;
     }
 .title {
     margin-left: auto;
