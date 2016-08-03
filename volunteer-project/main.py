@@ -70,11 +70,11 @@ class CreateEvent(webapp2.RequestHandler):
 		data["login"] = users.create_login_url('/')
 		data["logout"] = users.create_logout_url('/')
 
-		if users.get_current_user:
+		if users.get_current_user():
 			template = env.get_template("createEvent.html")
 			self.response.out.write(template.render(data))
 		else:
-			self.redirect("users.create_login_url()")
+			self.redirect(users.create_login_url('/'))
 
 	def post(self):
 		eventName = self.request.get('eventName')
@@ -92,6 +92,7 @@ class CreateEvent(webapp2.RequestHandler):
 			tags = tags, 
 			profile = profile,
 			creator = creator)
+			
 		event.put()
 
 		self.redirect("/")
@@ -108,8 +109,9 @@ class AboutHandler(webapp2.RequestHandler):
 		self.response.out.write(template.render(data))
 
 class myEventsHandler(webapp2.RequestHandler):
-	def post(self):
+	def get(self):
 		data = {}
+		data["current_user"] = users.get_current_user()
 		data["login"] = users.create_login_url('/')
 		data["logout"] = users.create_logout_url('/')
 
