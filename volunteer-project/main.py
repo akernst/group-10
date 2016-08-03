@@ -22,6 +22,7 @@ from google.appengine.api import users
 from event import Event 
 from voluser import VolUser 
 import logging
+import time
 
 env = jinja2.Environment(
 	loader=jinja2.FileSystemLoader("templates"))
@@ -106,7 +107,9 @@ class CreateEvent(webapp2.RequestHandler):
 			
 		event.put()
 
-		self.redirect("/")
+		time.sleep(0.5)
+		self.redirect('/')
+		
 
 class AboutHandler(webapp2.RequestHandler):
 	def get(self):
