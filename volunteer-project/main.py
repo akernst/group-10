@@ -31,14 +31,15 @@ class MainHandler(webapp2.RequestHandler):
 		# Displays events
 		event_query = Event.query()
 		event_results = event_query.fetch()
-		zipcode = self.request.get("zipcode")
-		if zipcode == "":
-			chunked_events = [event_results[i:i+3] for i in xrange(0, len(event_results), 3)]
-		else:
-			chunked_events = []
-			for event in event_results:
-				if event.location == zipcode:
-					chunked_events.append(event)
+		chunked_events = [event_results[i:i+3] for i in xrange(0, len(event_results), 3)]
+		# zipcode = self.request.get("zipcode")
+		# if zipcode == "":
+		# 	chunked_events = [event_results[i:i+3] for i in xrange(0, len(event_results), 3)]
+		# else:
+		# 	chunked_events = []
+		# 	for event in event_results:
+		# 		if event.location == zipcode:
+		# 			chunked_events.append(event)
 		
 		data = {}
 		data["chunked_events"]= chunked_events
@@ -90,7 +91,7 @@ class CreateEvent(webapp2.RequestHandler):
 		agereq = int(self.request.get('agereq'))
 		tags = self.request.get('tags')
 		profile = self.request.get('profile', "No-image-found.jpg")
-		creator = users.get_current_user()
+		creator = users.get_current_user().nickname()
 
 		event = Event(eventname = eventName,
 			eventdate = eventdate, 
