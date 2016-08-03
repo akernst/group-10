@@ -24,9 +24,9 @@
         <!--This will be the newsfeed-->
         {% for chunk in chunked_events %}
 
-        <div class="feed-sheet">
+        <div class="feed-sheet" class="effect">
         {% for event in chunk %}
-        <div class="event-container">
+        <div class="event-container" class="effect">
     			<div class="img-container">
     				<img src="/img?eventId={{ event.key.id() }}"> 
     			</div>
