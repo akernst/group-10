@@ -10,7 +10,6 @@ function redirectToSearch(){
 
 function printThanks(){
 	alert("Thanks for submitting your event! It is now added to our database.")
-	console.log()
 }
 
 function signUp(){
