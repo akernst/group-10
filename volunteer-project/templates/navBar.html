@@ -22,6 +22,13 @@
         <input id = "search" type="text" name="search_term"> 	
 		</form>
     </li>
+    <!--Advanced Search Bar-->
+    <li>
+        <form id="form1" method="get" action="/advancedSearch">
+        <input id = "search" type="date" name="search_date">
+        <input type = "submit"> 
+        </form>
+    </li>
     <!--Log in-->
     {% if current_user %}
     <a href = {{ logout }}><button id = "loggedin" type="button">Hi {{current_user.nickname()}}! <br>Log Out</button></a>

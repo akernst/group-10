@@ -159,6 +159,29 @@ class ImageHandler(webapp2.RequestHandler):
 		self.response.headers['Content-Type'] = 'image/jpeg'
 		self.response.out.write(e.profile)
 
+class AdvancedSearch(webapp2.RequestHandler) :
+	def get(self):
+		# Gets the date entered
+		query_date = self.request.get("search_date", "default")
+
+		# looks for date in the dates of events
+		logging.info(Event.eventdate)
+		logging.info(query_date)
+		event_query = Event.query().filter(Event.eventdate == query_date)
+		matchedEvents = event_query.fetch()
+
+		matched_Events = [matchedEvents[i:i+3] for i in xrange(0, len(matchedEvents), 3)]
+
+		# puts entries into a ditionary
+		data = {}
+		data["matched_Events"]= matched_Events
+		data["current_user"] = users.get_current_user()
+		data["login"] = users.create_login_url('/')
+		data["logout"] = users.create_logout_url('/')
+
+		template = env.get_template("advancedSearch.html")
+		self.response.write(template.render(data))
+
 class allEventsHandler(webapp2.RequestHandler):
 	def post(self):
 
@@ -178,5 +201,6 @@ app = webapp2.WSGIApplication([
 	('/about', AboutHandler),
 	('/myevents', myEventsHandler),
 	('/allEvents', allEventsHandler),
-	('/img', ImageHandler)
+	('/img', ImageHandler),
+	('/advancedSearch', AdvancedSearch)
 ], debug=True)
