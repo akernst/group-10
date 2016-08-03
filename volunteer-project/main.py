@@ -92,6 +92,7 @@ class CreateEvent(webapp2.RequestHandler):
 			tags = tags, 
 			profile = profile,
 			creator = creator)
+			
 		event.put()
 
 		self.redirect("/")
