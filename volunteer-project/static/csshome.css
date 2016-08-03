@@ -139,6 +139,7 @@ h2
 .event-container {
     position: relative;
     max-width: 300px;
+
     display: inline-block;
     border: 6px solid white;
     margin: 10px;
@@ -148,8 +149,17 @@ h2
 /*text*/
 div p {
     display: block;
-    padding-left: 10px;
+    /*padding-left: 10px;*/
     border-radius: 10px 10px 10px 10px;
+    overflow: scroll;
+}
+.eventinfo {
+    max-height: 50px;
+    max-width: 300px;
+    padding-left: 10px;
+}
+.date {
+    padding-left: 10px;
 }
 .img-container {
     height: 300px;
@@ -199,6 +209,7 @@ div{
     flex-direction: column;
     color: red;
     font-weight: bold;
+    text-align: center;
 }
 
 /*ivolunteer tab*/
