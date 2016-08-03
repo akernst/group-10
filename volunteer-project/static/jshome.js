@@ -26,8 +26,8 @@ function signUp(){
  function setup() {
 
     $(".event").click(redirectToEvent);
-    $("#createform").submit(printThanks);
-    $(".register").click(signUp)
+    $("#createform").unbind('click').click(printThanks);
+    $(".register").unbind('click').click(signUp)
  }
 
 $(document).ready(setup)
