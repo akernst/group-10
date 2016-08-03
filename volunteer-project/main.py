@@ -73,6 +73,7 @@ class SearchHandler(webapp2.RequestHandler):
 		self.response.write(template.render(data))
 
 class CreateEvent(webapp2.RequestHandler):
+	
 	def get(self):
 
 		data = {}

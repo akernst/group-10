@@ -13,20 +13,20 @@ function printThanks(){
 	console.log()
 }
 
-function signUp(event){
+function signUp(){
 
 	var request = $.ajax({
   	url: "/allEvents",
   	method: "POST",
   	data: { id : event.target.dataset.eventid},
-    alert("Thank you for signing up! This event has been added to your events")
 });
+  alert("Thank you for signing up! This event has been added to your events")
 }
 
  function setup() {
 
     $(".event").click(redirectToEvent);
-    $("#createform").submit(printThanks)
+    $("#createform").submit(printThanks);
     $(".register").click(signUp)
  }
 
