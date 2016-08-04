@@ -33,8 +33,8 @@
                 <p class="eventinfo">{{ event.eventinfo }}</p>
 
                 <p class="date"> <em>Date:</em> {{event.eventdate }}</p>
-
-                <p class = "location"> <em>Location:</em> {{ event.location }}</p>
+                <p class = "location"> <em>Location:</em> {{ event.location }} 
+                <p class = "time"> <em>Time:</em> {{event.startTime}} <em>-</em>  {{event.endTime}} </p>
                 <p class = "creator"> <em>Posted by:</em> {{ event.creator }}</p>
 
                 <button class = "register" data-eventid = "{{ event.key.id() }}" > Click here to sign up as a volunteer for this event </button>

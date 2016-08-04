@@ -191,11 +191,13 @@ div p {
     margin: 0;
 }
 .line-above {
-    font-size: 12px;
+    font-size: 14px;
     font-color: gray;
     height: 20px;
     margin-left: 10px;
     font-style: italic;
+    font-variant:small-caps;
+    font-weight: bolder;
 
 }
 .special-center {
@@ -213,6 +215,7 @@ div p {
     overflow: scroll;
     height: 110px;
     font-weight: bold;
+    color: purple;
 }
 
 .img-container {
@@ -265,7 +268,7 @@ div p {
 div img {
     /*position: absolute;*/
     max-width: 300px;
-    max-height: 300px;
+    max-height: 200px;
     margin-top: auto;
     margin-bottom: auto;
     width: auto;
