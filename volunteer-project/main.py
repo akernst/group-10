@@ -128,9 +128,22 @@ class myEventsHandler(webapp2.RequestHandler):
 
 			my_events = [myEvents[i:i+3] for i in xrange(0, len(myEvents), 3)]
 
+			rec_events = []
+
+			#gets the other events that those users also signed up for
+			# for event in myEvents:
+			# 	for event_user in event.signedUp:
+			# 		other_events = Event.query().filter(Event.signedUp.IN([event_user]))
+			# 		recEvents = other_events.fetch()
+			# 		rec_events.append(recEvents)
+
+			#add and format the rec events to my events
+			#rec_events = [all_recs[i:i+3] for i in xrange(0, len(all_recs), 3)]
+
 			# puts entries into a ditionary
 			data = {}
 			data["my_events"]= my_events
+			data["rec_events"]= rec_events
 			data["current_user"] = users.get_current_user()
 			data["login"] = users.create_login_url('/')
 			data["logout"] = users.create_logout_url('/')
