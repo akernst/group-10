@@ -84,6 +84,8 @@ class CreateEvent(webapp2.RequestHandler):
 		eventName = self.request.get('eventName')
 		eventinfo = self.request.get('eventinfo')
 		eventdate = self.request.get('eventdate')
+		startTime = self.request.get('startTime')
+		endTimes = self.request.get('endTime')
 		agereq = int(self.request.get('agereq'))
 		location = self.request.get('location')
 		zipcode = int(self.request.get('zipcode'))
@@ -95,6 +97,8 @@ class CreateEvent(webapp2.RequestHandler):
 			location = location,
 			zipcode = zipcode,
 			eventdate = eventdate, 
+			startTime = startTime,
+			endTime = endTime,
 			eventinfo = eventinfo, 
 			agereq = agereq, 
 			tags = tags, 
@@ -201,6 +205,16 @@ class allEventsHandler(webapp2.RequestHandler):
 		event.signedUp.append(current_user.user_id())
 		print event.signedUp
 		event.put()
+
+class myCreated(webapp2.RequestHandler):
+	def get(self):
+
+
+		data = {}
+		data
+
+		template = env.get_template("myCreated.html")
+		self.response.write(template.render(data))
 
 
 

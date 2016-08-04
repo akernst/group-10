@@ -5,6 +5,8 @@ class Event(ndb.Model):
 	eventname = ndb.StringProperty(required = True)
 	eventdate = ndb.StringProperty(required = True)
 	datetime = ndb.DateTimeProperty(auto_now = True)
+	startTime = ndb.StringProperty(required = True)
+	endTime = ndb.StringProperty(required = True)
 	eventinfo = ndb.StringProperty(required = True)
 	location = ndb.StringProperty(required = True)
 	zipcode = ndb.IntegerProperty(required = True)
