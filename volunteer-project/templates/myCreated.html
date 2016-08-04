@@ -26,7 +26,7 @@ Here are the events that you created:
 	{% for eventName in event_dict %}
 	<p><em>Event name: </em>{{ eventName }}</p>
     <br>
-        <p>Users Attending:</p>
+        <p><em>Users Attending:</em></p>
 		{% for person in event_dict[eventName] %}
 			<p> {{ person }}</p>
 		{% endfor %}
