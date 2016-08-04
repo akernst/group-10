@@ -33,14 +33,7 @@ class MainHandler(webapp2.RequestHandler):
 		event_query = Event.query()
 		event_results = event_query.fetch()
 		chunked_events = [event_results[i:i+3] for i in xrange(0, len(event_results), 3)]
-		# zipcode = self.request.get("zipcode")
-		# if zipcode == "":
-		# 	chunked_events = [event_results[i:i+3] for i in xrange(0, len(event_results), 3)]
-		# else:
-		# 	chunked_events = []
-		# 	for event in event_results:
-		# 		if event.location == zipcode:
-		# 			chunked_events.append(event)
+		print chunked_events
 		
 		data = {}
 		data["chunked_events"]= chunked_events
@@ -132,13 +125,29 @@ class myEventsHandler(webapp2.RequestHandler):
 		if users.get_current_user():
 			# looks for nickname of current user
 			event_query = Event.query().filter(Event.signedUp.IN([users.get_current_user().user_id()]))
-			myEvents = event_query.fetch()
+			myEvents = event_query.fetch() 
 
 			my_events = [myEvents[i:i+3] for i in xrange(0, len(myEvents), 3)]
+			print my_events
+
+			rec_events = []
+
+			#gets the other events that those users also signed up for
+			for event in myEvents:
+				for event_user in event.signedUp:
+					other_events = Event.query().filter(Event.signedUp.IN([event_user])) #object
+					fetched_events = other_events.fetch() #list of events
+					rec_events.extend(fetched_events)
+					#rec_events[n] = recEvents #adds list to a dictionary of lists
+					#n += 1
+			#add and format the rec events to my events
+			rec_events = [rec_events[i:i+3] for i in xrange(0, len(rec_events), 3)] #creates a list of dictionaries that contain lists of the events
+			print rec_events
 
 			# puts entries into a ditionary
 			data = {}
 			data["my_events"]= my_events
+			data["rec_events"]= rec_events
 			data["current_user"] = users.get_current_user()
 			data["login"] = users.create_login_url('/')
 			data["logout"] = users.create_logout_url('/')
