@@ -33,7 +33,6 @@ class MainHandler(webapp2.RequestHandler):
 		event_query = Event.query()
 		event_results = event_query.fetch()
 		chunked_events = [event_results[i:i+3] for i in xrange(0, len(event_results), 3)]
-		print chunked_events
 		
 		data = {}
 		data["chunked_events"]= chunked_events
@@ -170,12 +169,14 @@ class AdvancedSearch(webapp2.RequestHandler) :
 	def get(self):
 		# Gets the date entered
 		query_date = self.request.get("search_date", "default")
+		print query_date
 
 		# looks for date in the dates of events
-		logging.info(Event.eventdate)
-		logging.info(query_date)
+		#logging.info(Event.eventdate)
+		#logging.info(query_date)
 		event_query = Event.query().filter(Event.eventdate == query_date)
 		matchedEvents = event_query.fetch()
+		print matchedEvents
 
 		matched_Events = [matchedEvents[i:i+3] for i in xrange(0, len(matchedEvents), 3)]
 
