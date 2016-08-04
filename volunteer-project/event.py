@@ -14,4 +14,5 @@ class Event(ndb.Model):
 	tags = ndb.StringProperty(required= False)
 	profile = ndb.BlobProperty(required = False)
 	signedUp = ndb.StringProperty(repeated = True)
+	signedUpNames = ndb.StringProperty(repeated = True)
 	creator = ndb.StringProperty(required = True)

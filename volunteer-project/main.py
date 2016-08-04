@@ -32,6 +32,7 @@ class MainHandler(webapp2.RequestHandler):
 		# Displays events
 		event_query = Event.query()
 		event_results = event_query.fetch()
+
 		chunked_events = [event_results[i:i+3] for i in xrange(0, len(event_results), 3)]
 		
 		data = {}
@@ -85,7 +86,7 @@ class CreateEvent(webapp2.RequestHandler):
 		eventinfo = self.request.get('eventinfo')
 		eventdate = self.request.get('eventdate')
 		startTime = self.request.get('startTime')
-		endTimes = self.request.get('endTime')
+		endTime = self.request.get('endTime')
 		agereq = int(self.request.get('agereq'))
 		location = self.request.get('location')
 		zipcode = int(self.request.get('zipcode'))
@@ -202,14 +203,29 @@ class allEventsHandler(webapp2.RequestHandler):
 		logging.info(self.request.get("id"))
 		event = Event.get_by_id(int(self.request.get("id")))
 		event.signedUp.append(current_user.user_id())
-		print event.signedUp
+		event.signedUpNames.append(current_user.nickname())
 		event.put()
 
-class myCreated(webapp2.RequestHandler):
+class MyCreated(webapp2.RequestHandler):
 	def get(self):
 
-		all_events = Event.query()
+		created_events = Event.query().filter(Event.creator == users.get_current_user().nickname())
+		fetched_events = created_events.fetch()
+
+		event_dict = {}
+
+
+		for event in fetched_events:
+			event_dict[event.eventname] = event.signedUpNames
+		 	logging.info(event_dict)
+
+
+
 		data = {}
+		data["event_dict"] = event_dict
+		data["current_user"] = users.get_current_user()
+		data["login"] = users.create_login_url('/')
+		data["logout"] = users.create_logout_url('/')
 
 		template = env.get_template("myCreated.html")
 		self.response.write(template.render(data))
@@ -224,5 +240,6 @@ app = webapp2.WSGIApplication([
 	('/myevents', myEventsHandler),
 	('/allEvents', allEventsHandler),
 	('/img', ImageHandler),
-	('/advancedSearch', AdvancedSearch)
+	('/advancedSearch', AdvancedSearch),
+	('/myCreated', MyCreated)
 ], debug=True)
