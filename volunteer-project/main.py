@@ -32,6 +32,7 @@ class MainHandler(webapp2.RequestHandler):
 		# Displays events
 		event_query = Event.query()
 		event_results = event_query.fetch()
+
 		chunked_events = [event_results[i:i+3] for i in xrange(0, len(event_results), 3)]
 		
 		data = {}
@@ -203,27 +204,25 @@ class allEventsHandler(webapp2.RequestHandler):
 		event = Event.get_by_id(int(self.request.get("id")))
 		event.signedUp.append(current_user.user_id())
 		event.signedUpNames.append(current_user.nickname())
-		logging.info(event.signedUpNames)
-		print event.signedUp
 		event.put()
 
 class MyCreated(webapp2.RequestHandler):
 	def get(self):
 
-		all_events = Event.query().filter(Event.creator == users.get_current_user().nickname())
-		fetched_events = all_events.fetch()
-		logging.info(fetched_events)
+		created_events = Event.query().filter(Event.creator == users.get_current_user().nickname())
+		fetched_events = created_events.fetch()
 
-		signed_users = {}
+		event_dict = {}
 
 
 		for event in fetched_events:
-			signed_users[event.eventname] = event.signedUpNames
-			logging.info(signed_users)
+			event_dict[event.eventname] = event.signedUpNames
+		 	logging.info(event_dict)
 
 
 
 		data = {}
+		data["event_dict"] = event_dict
 		data["current_user"] = users.get_current_user()
 		data["login"] = users.create_login_url('/')
 		data["logout"] = users.create_logout_url('/')

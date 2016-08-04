@@ -1,15 +1,62 @@
 <!Doctype html>
+
+<head>
+        <title>My Created Events</title>
+        <link rel = "stylesheet" href = "/static/csshome.css">
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script><!-- this is how you link jquery... google hosted libraries jquery has this -->
+        <script src = "/static/jshome.js"></script>
+</head>
+
+<body>
+        <!-- Links to Navigation Bar -->
+        {% include 'navBar.html' %}
+        <br>
+        <br>
+        <br>
+        <br>
+
 <html>
 
+<body>
 <h1>
 Here are the events that you created:
 </h1>
 
-<body>
 	<div>
-		
-
+	{% for eventName in event_dict %}
+	<p><em>The name of the event is </em>{{ eventName }}</p>
+		{% for person in event_dict[eventName] %}
+			<p> {{ person }}</p>
+		{% endfor %}
+	{% endfor %}
 	</div>
 </body>
 
+ {% for chunk in chunked_events %}
+
+        <div class="feed-sheet" class="effect">
+        {% for event in chunk %}
+        <div class="event-container" class="effect">
+    			<div class="img-container">
+    				<img src="/img?eventId={{ event.key.id() }}"> 
+    			</div>
+                
+    			<p class="title"> {{ event.eventname }}</p>
+                <!-- <p class="line-above special-center">Event Name</p> -->
+
+                <p class="line-above">Description:</p>
+    			<p class="eventinfo">{{ event.eventinfo }}</p>
+                <div class = details>
+    			<p class="date"> <em>Date:</em> {{event.eventdate }}</p>
+
+                <p class = "location"> <em>Location:</em> {{ event.location }} 
+                <p class = "time"> <em>Time:</em> {{event.startTime}} <em>-</em>  {{event.endTime}} </p>
+                <p class = "creator"> <em>Posted by:</em> {{ event.creator }}</p>
+                </div>
+
+                <button class = "register" data-eventid = "{{ event.key.id() }}" > Click here to sign up as a volunteer for this event </button>
+        </div>
+        {% endfor %}
+        </div>
+        {% endfor %}
 </html>
