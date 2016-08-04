@@ -15,33 +15,9 @@
         <br>
         <br>
 
-<div>
-    <!--This will be the newsfeed-->
-        {% for chunk in my_events %}
 
-        <div class="feed-sheet" class = "effect">
-        {% for event in chunk %}
-        <div class="event-container" class = "effect">
-                <div class="img-container">
-                    <img src="/img?eventId={{ event.key.id() }}"> 
-                </div>
-                <p class="title"> Event name:  {{ event.eventname }}</p>
-                <p class="eventinfo"> Description: {{ event.eventinfo }}</p>  
-                <p class="date"> Date: {{event.eventdate }} </p>
-                <p class = "location"> Locaiton: {{ event.location }} </p>
-                <p class = "creator"> Posted by: {{ event.creator }} </p>
-        </div>
-        {% endfor %}
-        </div>
-        {% endfor %}
-</div>
-
-
-<h1>
-    Other users who signed up for your event also signed up for these following events:
-</h1>
-    <!--This will be the newsfeed-->
-        {% for chunk in rec_events %}
+<!--This will be the newsfeed-->
+        {% for chunk in chunked_events %}
 
         <div class="feed-sheet" class="effect">
         {% for event in chunk %}
@@ -66,8 +42,12 @@
         {% endfor %}
         </div>
         {% endfor %}
+
+
     <!-- Links to footer -->
-       <!--  {% include 'recfooter.html' %} -->
+    {% include 'recfooter.html' %}
+
+
 
 </html>
 
