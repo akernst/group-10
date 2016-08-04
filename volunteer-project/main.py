@@ -84,15 +84,21 @@ class CreateEvent(webapp2.RequestHandler):
 		eventName = self.request.get('eventName')
 		eventinfo = self.request.get('eventinfo')
 		eventdate = self.request.get('eventdate')
+		startTime = self.request.get('startTime')
+		endTimes = self.request.get('endTime')
 		agereq = int(self.request.get('agereq'))
-		location = int(self.request.get('zipcode'))
+		location = self.request.get('location')
+		zipcode = int(self.request.get('zipcode'))
 		tags = self.request.get('tags')
 		profile = self.request.get('profile', "No-image-found.jpg")
 		creator = users.get_current_user().nickname()
 
 		event = Event(eventname = eventName,
 			location = location,
+			zipcode = zipcode,
 			eventdate = eventdate, 
+			startTime = startTime,
+			endTime = endTime,
 			eventinfo = eventinfo, 
 			agereq = agereq, 
 			tags = tags, 
@@ -127,7 +133,6 @@ class myEventsHandler(webapp2.RequestHandler):
 			myEvents = event_query.fetch() 
 
 			my_events = [myEvents[i:i+3] for i in xrange(0, len(myEvents), 3)]
-			print my_events
 
 			rec_events = []
 
@@ -199,6 +204,15 @@ class allEventsHandler(webapp2.RequestHandler):
 		event.signedUp.append(current_user.user_id())
 		print event.signedUp
 		event.put()
+
+class myCreated(webapp2.RequestHandler):
+	def get(self):
+
+		all_events = Event.query()
+		data = {}
+
+		template = env.get_template("myCreated.html")
+		self.response.write(template.render(data))
 
 
 
