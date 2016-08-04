@@ -7,9 +7,10 @@ html {
 }
 
 #handlogo{
-    width:90px;height:70px; position:absolute; right:550px
+    width:90px;height:70px; position:absolute; right:650px
 
 }
+
 /*search bar*/ 
 #search {
    position: absolute;
@@ -20,13 +21,37 @@ html {
    /*right: 200px;*/
    right: 315px;
 }
-#form1 {
-    top: 50px;
-    right: 480px;
-}
-#form2 {
-    right: 480px;
 
+#filter{
+   top: 15px;
+   position: absolute;
+   right: 150px;
+   top: 100px;
+   width: 120px;
+   height: 30px;
+   text-align: right;
+}
+
+#submitbut{
+   position: absolute;
+   right: 40px;
+   top: 100px;
+   width: 100px;
+   height: 25px;
+   border: 3px solid #ff6666; /* salmon */
+   font-size: 14px;
+   font-family: 'Spinnaker', sans-serif;
+   color: black;
+   background-color: #c2c2d6;
+   border-radius: 10px 10px 10px 10px;
+   -webkit-transition-duration: 0.4s; /* Safari */
+   transition-duration: 0.4s;
+}
+
+
+#submitbut:hover {
+    background-color: grey;
+    color: white;
 }
 #about{
     margin: 100px;
