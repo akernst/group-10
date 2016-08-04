@@ -10,7 +10,6 @@ html {
     width:90px;height:70px; position:absolute; right:650px
 
 }
-
 /*search bar*/ 
 #search {
    position: absolute;
@@ -110,10 +109,6 @@ html {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
-.creator {
-    margin-left: 10px;
-    font-size: 15px;
-}
 
 /*create an event button*/
 .event {
@@ -179,7 +174,7 @@ h2
 }
 .event-container {
     position: relative;
-    max-width: 300px;
+    max-width: 314px;
     min-height: 600px;
     display: inline-block;
     border: 6px solid white;
@@ -212,40 +207,64 @@ div p {
     flex-direction: column;
 }
 .eventinfo {
-    max-width: 300px;
+    max-width: 314px;
     padding-left: 10px;
     border: 2px solid white;
     overflow: scroll;
     height: 110px;
     font-weight: bold;
 }
-.date {
-    padding-left: 10px;
-    height: 25px;
-    margin-top: 5px;
-    font-size: 15px;
-}
+
 .img-container {
-    height: 250px;
-    width: 300px;
+    height: 225px;
+    width: 314px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     background-color: #cce6ff;
 }
+
+.date {
+    margin-left: 10px;
+    height: 25px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bolder;
+    font-variant:small-caps;
+}
 .location {
     margin-left: 10px;
     height: 25px;
-    font-size: 15px;
+    font-size: 16px;
+    font-weight: bolder;
+    font-variant:small-caps;
+
 }
+
+.time{
+    margin-left: 10px;
+    height: 25px;
+    font-size: 16px;
+    font-weight: bolder;
+    font-variant:small-caps;
+}
+.creator {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: bolder;
+    font-variant:small-caps;
+}
+
 .register {
     position: absolute;
     bottom: 0;
+    font-variant:small-caps;
+    font-size: 16px;
 }
 /*image*/
 div img {
     /*position: absolute;*/
-    max-width: 275px;
+    max-width: 300px;
     max-height: 300px;
     margin-top: auto;
     margin-bottom: auto;
@@ -285,7 +304,7 @@ div{
     color: red;
     font-size: 30px;
     text-align: center;
-    height: 80px;
+    height: 75px;
 }
 
 /*ivolunteer tab*/
