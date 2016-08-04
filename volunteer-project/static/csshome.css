@@ -118,6 +118,10 @@ html {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
+#loggedin:hover {
+    background-color: grey;
+    color: white;
+}
 
 /*create an event button*/
 .event {
