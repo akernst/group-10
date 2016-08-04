@@ -202,20 +202,27 @@ class allEventsHandler(webapp2.RequestHandler):
 		logging.info(self.request.get("id"))
 		event = Event.get_by_id(int(self.request.get("id")))
 		event.signedUp.append(current_user.user_id())
+		event.signedUpNames.append(current_user.nickname())
+		logging.info(event.signedUpNames)
 		print event.signedUp
 		event.put()
 
 class MyCreated(webapp2.RequestHandler):
 	def get(self):
 
-		all_events = Event.query().filter(Event.creator == users.get_current_user().user_id())
+		all_events = Event.query().filter(Event.creator == users.get_current_user().nickname())
 		fetched_events = all_events.fetch()
+		logging.info(fetched_events)
+
+		signed_users = {}
+
 
 		for event in fetched_events:
-			signed_users = event.signedUp
+			signed_users[event.eventname] = event.signedUpNames
 			logging.info(signed_users)
 
-		
+
+
 		data = {}
 		data["current_user"] = users.get_current_user()
 		data["login"] = users.create_login_url('/')
