@@ -20,7 +20,7 @@
     <li>
     	<form id="form1" method="get" action="/search">
 
-        <input id = "search" type="text" name="search_term"> 
+        <input id = "search" type="text" name="search_term"  value="Search for a tag" onfocus="javascript:this.value=''" onblur="javascript:if(this.value.length === 0){this.value='Search for a tag'}"/> 
         <!-- <label for="search_term">Search</label>	 -->
 		</form>
     </li>
