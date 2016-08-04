@@ -46,8 +46,17 @@ html {
    -webkit-transition-duration: 0.4s; /* Safari */
    transition-duration: 0.4s;
 }
-
-
+#created_link {
+    margin-left: 20px;
+    color: white;
+    font-size: 20px;
+    font-family: monospace;
+}
+#created_link:hover {
+    font-weight: bold;
+    font-size-adjust: 25px;
+    font-style: bold;
+}
 #submitbut:hover {
     background-color: grey;
     color: white;
