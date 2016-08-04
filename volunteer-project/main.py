@@ -133,7 +133,6 @@ class myEventsHandler(webapp2.RequestHandler):
 			myEvents = event_query.fetch() 
 
 			my_events = [myEvents[i:i+3] for i in xrange(0, len(myEvents), 3)]
-			print my_events
 
 			rec_events = []
 
@@ -209,9 +208,8 @@ class allEventsHandler(webapp2.RequestHandler):
 class myCreated(webapp2.RequestHandler):
 	def get(self):
 
-
+		all_events = Event.query()
 		data = {}
-		data
 
 		template = env.get_template("myCreated.html")
 		self.response.write(template.render(data))
