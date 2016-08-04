@@ -85,13 +85,15 @@ class CreateEvent(webapp2.RequestHandler):
 		eventinfo = self.request.get('eventinfo')
 		eventdate = self.request.get('eventdate')
 		agereq = int(self.request.get('agereq'))
-		location = int(self.request.get('zipcode'))
+		location = self.request.get('location')
+		zipcode = int(self.request.get('zipcode'))
 		tags = self.request.get('tags')
 		profile = self.request.get('profile', "No-image-found.jpg")
 		creator = users.get_current_user().nickname()
 
 		event = Event(eventname = eventName,
 			location = location,
+			zipcode = zipcode,
 			eventdate = eventdate, 
 			eventinfo = eventinfo, 
 			agereq = agereq, 
