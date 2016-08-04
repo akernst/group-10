@@ -87,6 +87,7 @@ html {
 }
 .creator {
     margin-left: 10px;
+    font-size: 15px;
 }
 
 /*create an event button*/
@@ -154,7 +155,7 @@ h2
 .event-container {
     position: relative;
     max-width: 300px;
-    min-height: 500px;
+    min-height: 600px;
     display: inline-block;
     border: 6px solid white;
     margin: 10px;
@@ -167,15 +168,14 @@ div p {
     display: block;
     /*padding-left: 10px;*/
     border-radius: 10px 10px 10px 10px;
-    overflow: scroll;
-    height: 50px;
     margin: 0;
 }
 .line-above {
-    font-size: 10px;
+    font-size: 12px;
     font-color: gray;
-    height: 10px;
+    height: 20px;
     margin-left: 10px;
+    font-style: italic;
 
 }
 .special-center {
@@ -187,18 +187,21 @@ div p {
     flex-direction: column;
 }
 .eventinfo {
-    max-height: 50px;
     max-width: 300px;
     padding-left: 10px;
     border: 2px solid white;
+    overflow: scroll;
+    height: 110px;
+    font-weight: bold;
 }
 .date {
     padding-left: 10px;
     height: 25px;
     margin-top: 5px;
+    font-size: 15px;
 }
 .img-container {
-    height: 300px;
+    height: 250px;
     width: 300px;
     display: flex;
     justify-content: center;
@@ -208,6 +211,7 @@ div p {
 .location {
     margin-left: 10px;
     height: 25px;
+    font-size: 15px;
 }
 .register {
     position: absolute;
@@ -246,6 +250,7 @@ div{
         margin: 4px 2px;
         margin-left: 10px;
     }
+/*red text event title */
 .title {
     margin-left: auto;
     margin-right: auto;
@@ -253,9 +258,9 @@ div{
     justify-content: center;
     flex-direction: column;
     color: red;
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
-    height: 20px;
+    height: 80px;
 }
 
 /*ivolunteer tab*/
