@@ -22,12 +22,16 @@
 Here are the events that you created:
 </h1>
 
-	<div>
+	<div id="about">
 	{% for eventName in event_dict %}
-	<p><em>The name of the event is </em>{{ eventName }}</p>
+	<p><em>The name of the event is: </em>{{ eventName }}</p>
+    <br>
+        <p>Users Attending:</p>
 		{% for person in event_dict[eventName] %}
 			<p> {{ person }}</p>
 		{% endfor %}
+        <br>
+        <br>
 	{% endfor %}
 	</div>
 </body>
