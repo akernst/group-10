@@ -85,7 +85,7 @@ class CreateEvent(webapp2.RequestHandler):
 		eventinfo = self.request.get('eventinfo')
 		eventdate = self.request.get('eventdate')
 		startTime = self.request.get('startTime')
-		endTimes = self.request.get('endTime')
+		endTime = self.request.get('endTime')
 		agereq = int(self.request.get('agereq'))
 		location = self.request.get('location')
 		zipcode = int(self.request.get('zipcode'))
@@ -205,11 +205,21 @@ class allEventsHandler(webapp2.RequestHandler):
 		print event.signedUp
 		event.put()
 
-class myCreated(webapp2.RequestHandler):
+class MyCreated(webapp2.RequestHandler):
 	def get(self):
 
-		all_events = Event.query()
+		all_events = Event.query().filter(Event.creator == users.get_current_user().user_id())
+		fetched_events = all_events.fetch()
+
+		for event in fetched_events:
+			signed_users = event.signedUp
+			logging.info(signed_users)
+
+		
 		data = {}
+		data["current_user"] = users.get_current_user()
+		data["login"] = users.create_login_url('/')
+		data["logout"] = users.create_logout_url('/')
 
 		template = env.get_template("myCreated.html")
 		self.response.write(template.render(data))
@@ -224,5 +234,6 @@ app = webapp2.WSGIApplication([
 	('/myevents', myEventsHandler),
 	('/allEvents', allEventsHandler),
 	('/img', ImageHandler),
-	('/advancedSearch', AdvancedSearch)
+	('/advancedSearch', AdvancedSearch),
+	('/myCreated', MyCreated)
 ], debug=True)
