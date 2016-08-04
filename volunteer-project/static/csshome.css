@@ -244,7 +244,8 @@ div p {
 }
 /*image*/
 div img {
-    /*position: absolute;*/
+    
+    \
     max-width: 275px;
     max-height: 300px;
     margin-top: auto;
@@ -334,6 +335,7 @@ li a:hover {
         height: 100px;
         width: 400px;
 }
+
 
 .effect {
         /* offset-x | offset-y | color */
