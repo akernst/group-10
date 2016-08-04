@@ -219,7 +219,8 @@ div p {
 }
 /*image*/
 div img {
-    /*position: absolute;*/
+    
+    \
     max-width: 275px;
     max-height: 300px;
     margin-top: auto;
@@ -305,26 +306,11 @@ li a:hover {
         color: lightblue;
 }
 
-
-/*Formatting for the my events page and recfooter */
 #descriptionBox {
         height: 100px;
         width: 400px;
 }
 
-.page-wrap {
-  min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -142px; 
-}
-.page-wrap:after {
-  content: "";
-  display: block;
-}
-.site-footer, .page-wrap:after {
-  height: 142px; 
-}
-/* */
 
 .effect {
         /* offset-x | offset-y | color */

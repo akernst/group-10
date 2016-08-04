@@ -15,13 +15,13 @@
         <br>
         <br>
 
-<div class = "page-wrap">
+<div>
     <!--This will be the newsfeed-->
         {% for chunk in my_events %}
 
-        <div class="feed-sheet">
+        <div class="feed-sheet" class = "effect">
         {% for event in chunk %}
-        <div class="event-container">
+        <div class="event-container" class = "effect">
                 <div class="img-container">
                     <img src="/img?eventId={{ event.key.id() }}"> 
                 </div>
@@ -35,8 +35,39 @@
         </div>
         {% endfor %}
 </div>
+
+
+<h1>
+    Other users who signed up for your event also signed up for these following events:
+</h1>
+    <!--This will be the newsfeed-->
+        {% for chunk in rec_events %}
+
+        <div class="feed-sheet" class="effect">
+        {% for event in chunk %}
+        <div class="event-container" class="effect">
+                <div class="img-container">
+                    <img src="/img?eventId={{ event.key.id() }}"> 
+                </div>
+                
+                <p class="title"> {{ event.eventname }}</p>s
+                <!-- <p class="line-above special-center">Event Name</p> -->
+
+                <p class="line-above">Description:</p>
+                <p class="eventinfo">{{ event.eventinfo }}</p>
+
+                <p class="date"> <em>Date:</em> {{event.eventdate }}</p>
+
+                <p class = "location"> <em>Location:</em> {{ event.location }}</p>
+                <p class = "creator"> <em>Posted by:</em> {{ event.creator }}</p>
+
+                <button class = "register" data-eventid = "{{ event.key.id() }}" > Click here to sign up as a volunteer for this event </button>
+        </div>
+        {% endfor %}
+        </div>
+        {% endfor %}
     <!-- Links to footer -->
-        <!-- {% include 'recfooter.html' %} -->
+       <!--  {% include 'recfooter.html' %} -->
 
 </html>
 
