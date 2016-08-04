@@ -20,7 +20,7 @@
     <li>
     	<form id="form1" method="get" action="/search">
 
-        <input id = "search" type="text" name="search_term"> 
+        <input id = "search" type="text" name="search_term"  value="Search for a tag" onfocus="javascript:this.value=''" onblur="javascript:if(this.value.length === 0){this.value='Search for a tag'}"/> 
         <!-- <label for="search_term">Search</label>	 -->
 		</form>
     </li>
@@ -33,15 +33,7 @@
     {% endif %}
   </ul></h1>
 </nav>
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 085b1797a76966862d0a7f4d229e5dda3f45a248
->>>>>>> d0012d7917f718e1a5552a05698ec327534d0c54
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 <script src="/static/jshome.js"></script>
